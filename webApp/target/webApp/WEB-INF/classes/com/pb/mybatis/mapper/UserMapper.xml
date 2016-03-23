@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"        
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+        
+<!-- Mapper文件最好放在与Dao接口同一目次下 -->
+<mapper namespace="com.pb.mybatis.mapper.UserMapper">
+  
+  <!-- 定义数据库字段与实体对象的映射关系 -->
+  <resultMap type="com.pb.mybatis.entity.User" id="resultUser">
+    <id property="id" column="ID"/>
+    <result property="age" column="AGE"/>
+    <result property="gender" column="GENDER"/>
+    <result property="mail" column="MAIL"/>
+    <result property="nickname" column="NICKNAME"/>
+    <result property="password" column="PASSWORD"/>
+    <result property="site" column="SITE"/>
+    <result property="username" column="USERNAME"/>
+  </resultMap>
+  
+  <parameterMap type="com.pb.mybatis.entity.User" id="paramUser">
+    <parameter property="id"/>
+    <parameter property="age"/>
+    <parameter property="gender"/>
+    <parameter property="mail"/>
+    <parameter property="nickname"/>
+    <parameter property="password"/>
+    <parameter property="site"/>
+    <parameter property="username"/>
+  </parameterMap>
+  
+  <!-- 定义要操纵的SQL语句 -->  
+  <insert id="save" parameterType="com.pb.mybatis.entity.User"> 
+    INSERT INTO user(id,age,gender,username,password,mail,nickname,site)
+    VALUES(#{id},#{age},#{gender},#{username},#{password},#{mail},#{nickname},#{site})
+  </insert>
+  
+  <select id="findAll" resultMap="resultUser">
+    SELECT * FROM user
+  </select>
+  
+  <select id="findById" parameterType="Integer" resultMap="resultUser">
+    SELECT * FROM user
+    WHERE id=#{value}
+  </select>
+  
+  <delete id="delete" parameterType="Integer">
+    DELETE FROM user 
+    WHERE id=#{value}
+  </delete>
+  
+  <update id="update" parameterType="com.pb.mybatis.entity.User" >
+    UPDATE user
+    <set>
+       <if test="age != null">age=#{age},</if>
+       <if test="gender != null">gender=#{gender},</if>
+       <if test="username != null">username=#{username},</if>
+       <if test="password != null">password=#{password},</if>
+       <if test="mail != null">mail=#{mail},</if>
+       <if test="nickname != null">nickname=#{nickname},</if>
+       <if test="site != null">site=#{site},</if>
+    </set>
+    WHERE id=#{id}
+  </update>
+  
+  <select id="findByPage" parameterType="com.pb.mybatis.util.UserPage" resultMap="resultUser">
+    SELECT * FROM user
+    WHERE 1=1
+    <if test="user != null">
+       <if test="user.nickname != null">and nickname like #{user.nickname}</if>
+       <if test="user.username != null">and username like #{user.username}</if>       
+    </if>    
+    LIMIT #{firstRec},#{pageSize}	
+  </select>
+  
+  <select id="getCount" parameterType="com.pb.mybatis.util.UserPage" resultType="Integer">
+    SELECT count(*) FROM user
+    WHERE 1=1
+    <if test="user != null">       
+       <if test="user.nickname != null">and nickname like #{user.nickname}</if>
+       <if test="user.username != null">and username like #{user.username}</if>       
+    </if>    
+  </select>
+</mapper>

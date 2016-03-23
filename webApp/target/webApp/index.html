@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript" src="static/js/jquery.js"></script>
+<script type="text/javascript">
+
+	function getObj(id){
+		return document.getElementById(id);
+	}
+
+	function getProvider(id){
+
+		var providerId = getObj(id).value;
+
+		if(providerId!=""){
+			window.location.href = "rest/providers/"+providerId;
+		}else{
+			alert("input provider id");
+		}
+	}
+
+	function getAllProviders(type){
+		if("json" == type){
+			$.getJSON("rest/providers",null,function(response){
+				for(var k in response){
+					alert(k+" "+response[k]);
+				}
+			});
+			
+		}
+	}
+
+	function delProvider(id){
+		var providerId = getObj(id).value;
+		if(providerId!=""){
+		  $.ajax({
+		            type:"DELETE",
+		            url:'rest/providers/'+providerId,
+		            success:function(msg){
+		                //alert("test order");
+		                //all delete is success,this can be execute
+		                alert("delete success.");
+		                //$("#tr_"+order_id).remove();
+		            }
+		        });
+		}else{
+			alert("input provider id");
+		}
+	}
+</script>
+<a href="static/html/new_provider.html">Add New Provider</a><br>
+<a href="rest/providers">List All Providers</a><br>
+<a href="#" onclick="getAllProviders('json')">List All Provider Json</a><br>
+<a href="rest/providers/count">Get Provider Count</a><br>
+<a href="#" onclick="getProvider('providerId')">Get one Count</a><input id="providerId" name="providerId" type="text"></input><br>
+<a href="#" onclick="delProvider('delProviderId')">Delete Provider By ID</a><input id="delProviderId" name="providerId" type="text"></input><br>
+<div id="resultDiv"></div>
+</body>
+</html>
