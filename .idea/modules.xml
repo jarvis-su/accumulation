@@ -3,6 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/accumulation.iml" filepath="$PROJECT_DIR$/.idea/accumulation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core_tools/demo.core_tools.iml" filepath="$PROJECT_DIR$/core_tools/demo.core_tools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo_parent/demo.parent.iml" filepath="$PROJECT_DIR$/demo_parent/demo.parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sys_monitor/demo.sys_monitor.iml" filepath="$PROJECT_DIR$/sys_monitor/demo.sys_monitor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user_mgmt/demo.user_mgmt.iml" filepath="$PROJECT_DIR$/user_mgmt/demo.user_mgmt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-distribution/distribution.iml" filepath="$PROJECT_DIR$/demo-distribution/distribution.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service/service.iml" filepath="$PROJECT_DIR$/service/service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webApp/webApp.iml" filepath="$PROJECT_DIR$/webApp/webApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webservice_demo/webservice_demo.iml" filepath="$PROJECT_DIR$/webservice_demo/webservice_demo.iml" />
     </modules>
   </component>
 </project>

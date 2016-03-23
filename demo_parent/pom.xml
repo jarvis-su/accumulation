@@ -11,6 +11,9 @@
     <modules>
         <module>../core_tools</module>
         <module>../user_mgmt</module>
+        <module>../webApp</module>
+        <module>../service</module>
+        <module>../sys_monitor</module>
         <module>../demo-distribution</module>
     </modules>
 
