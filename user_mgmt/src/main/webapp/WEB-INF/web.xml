@@ -3,25 +3,17 @@
         "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-    <display-name>Archetype Created Web Application</display-name>
+    <display-name>User manager Web Application</display-name>
 
-    <context-param>
-        <param-name>
-            javax.servlet.jsp.jstl.fmt.localizationContext
-        </param-name>
-        <param-value>jarvis.demo.demoMessages</param-value>
-    </context-param>
-
-    <!--<filter>
-        <filter-name>XSS</filter-name>
-        <filter-class>com.jarvis.demo.gui.filter.XssSecurityFilter</filter-class>
+    <filter>
+        <filter-name>struts2</filter-name>
+        <filter-class>
+            org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
+        </filter-class>
     </filter>
-    <filter-mapping>
-        <filter-name>XSS</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>-->
 
-    <session-config>
-        <session-timeout>30</session-timeout>
-    </session-config>
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>
