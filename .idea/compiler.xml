@@ -31,7 +31,6 @@
         <processorPath useClasspath="true" />
         <module name="demo.core_tools" />
         <module name="demo.sys_monitor" />
-        <module name="demo.user_mgmt" />
         <module name="webApp" />
         <module name="webservice_demo" />
       </profile>
@@ -42,12 +41,19 @@
         <processorPath useClasspath="true" />
         <module name="service" />
       </profile>
+      <profile default="false" name="Annotation profile for demo.user_mgmt" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="demo.user_mgmt" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="demo.core_tools" target="1.5" />
       <module name="demo.parent" target="1.7" />
       <module name="demo.sys_monitor" target="1.5" />
-      <module name="demo.user_mgmt" target="1.5" />
+      <module name="demo.user_mgmt" target="1.7" />
       <module name="distribution" target="1.7" />
       <module name="service" target="1.7" />
       <module name="webApp" target="1.5" />
