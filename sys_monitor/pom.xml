@@ -11,6 +11,8 @@
         <core.tools.version>1.0-SNAPSHOT</core.tools.version>
         <nexus.releases.server.ip>192.168.31.100</nexus.releases.server.ip>
         <nexus.snapshots.server.ip>192.168.31.100</nexus.snapshots.server.ip>
+        <jar.spring.version>4.1.2.RELEASE</jar.spring.version>
+        <jar.struts.version>2.3.1.2</jar.struts.version>
     </properties>
 
     <distributionManagement>
@@ -37,6 +39,58 @@
             <groupId>jarvis</groupId>
             <artifactId>demo.core_tools</artifactId>
             <version>${core.tools.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-core</artifactId>
+            <version>${jar.struts.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.12.1.GA</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${jar.spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${jar.spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${jar.spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+            <version>${jar.spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${jar.spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${jar.spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${jar.spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${jar.spring.version}</version>
         </dependency>
     </dependencies>
     <build>
