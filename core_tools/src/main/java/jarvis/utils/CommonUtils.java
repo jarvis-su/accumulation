@@ -1,8 +1,12 @@
 package jarvis.utils;
 
+import logging.util.CustomLogManager;
+
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * CommonUtils
@@ -11,6 +15,8 @@ import java.util.Properties;
  * @date 1/22/2016
  */
 public class CommonUtils {
+    private static Logger logger = CustomLogManager.getLogger(CommonUtils.class.getName());
+
     public static void releaseResource(Object source, AutoCloseable... closeableResource) {
         if (closeableResource == null || closeableResource.length == 0) {
             return;
@@ -20,6 +26,7 @@ public class CommonUtils {
                 try {
                     closeable.close();
                 } catch (Throwable th) {
+                    logger.log(Level.FINE,"Throw exception due to ", th);
                     closeable = null;
                 }
             }
