@@ -8,7 +8,7 @@
             <handler-chain>
                 <handler>
                     <handler-class>
-                        com.jarvis.service.ws.server.WebserviceHandler
+                        com.jarvis.service.ws.server.handler.WebserviceHandler
                     </handler-class>
                 </handler>
             </handler-chain>
