@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * Created by Jarvis on 4/11/16.
  */
-public interface ActiveUser {
+public interface IActiveUser {
     public Integer getIdentifier();
 
     public String getSessionIdentifier();
