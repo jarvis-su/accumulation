@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime"
+           version="2.0">
+    <endpoint name="userService"
+              implementation="com.jarvis.service.UserServiceImpl"
+              url-pattern="/userService">
+        <handler-chains xmlns="http://java.sun.com/xml/ns/javaee">
+            <handler-chain>
+                <handler>
+                    <handler-class>
+                        com.jarvis.service.server.WebserviceLogHandler
+                    </handler-class>
+                </handler>
+            </handler-chain>
+        </handler-chains>
+    </endpoint>
+</endpoints>
