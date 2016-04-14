@@ -2,7 +2,12 @@ package jarvis;
 
 import jarvis.utils.DesUtil;
 import logging.util.*;
+import org.apache.commons.lang3.time.FastDateFormat;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.logging.Logger;
 
 /**
@@ -16,5 +21,23 @@ public class T {
 
         logger.info("1111 = " + DesUtil.sha512Hex("1111"));
         logger.info("global = " + DesUtil.sha512Hex("global"));
+
+        GregorianCalendar cal = new GregorianCalendar();
+//        cal.setTime((Date) date.clone());
+
+        cal.set(Calendar.HOUR_OF_DAY, 23);
+        cal.set(Calendar.MINUTE, cal.getMaximum(Calendar.MINUTE));
+        cal.set(Calendar.SECOND, cal.getMaximum(Calendar.SECOND));
+        cal.set(Calendar.MILLISECOND, 0);
+//        cal.set(Calendar.HOUR, 23);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd H:m:s.S");
+        logger.info(sdf.format(cal.getTime()));
+
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss.S");
+        logger.info(sdf1.format(cal.getTime()));
+
+        FastDateFormat fdf = FastDateFormat.getInstance("yyyy-MM-dd HH:mm:ss");
+        logger.info(fdf.format(cal));
+
     }
 }
