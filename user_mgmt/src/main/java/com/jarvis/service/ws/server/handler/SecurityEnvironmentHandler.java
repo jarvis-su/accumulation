@@ -27,7 +27,8 @@ public class SecurityEnvironmentHandler implements CallbackHandler {
 
     }
 
-    public void handle(Callback[] callbacks) throws IOException, UnsupportedCallbackException {
+    @Override
+	public void handle(Callback[] callbacks) throws IOException, UnsupportedCallbackException {
         for (int i = 0; i < callbacks.length; i++) {
             if (callbacks[i] instanceof PasswordValidationCallback) {
                 PasswordValidationCallback cb = (PasswordValidationCallback) callbacks[i];

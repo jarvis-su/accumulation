@@ -20,7 +20,7 @@ public class AjaxController {
     @RequestMapping("/ajax/products")
     @ResponseBody
     public List<Product> getProducts(){
-        List<Product> products = new ArrayList<Product>();
+        List<Product> products = new ArrayList<>();
         
         Product p1 = new Product();
         p1.setPrice(22.0);

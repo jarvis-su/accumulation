@@ -22,7 +22,7 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public List<Product> getProducts() {
-        List<Product> products = new ArrayList<Product>();
+        List<Product> products = new ArrayList<>();
 
         Product p1 = new Product();
         p1.setPrice(22.0);

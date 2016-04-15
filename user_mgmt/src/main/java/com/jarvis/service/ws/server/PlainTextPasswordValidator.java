@@ -11,7 +11,9 @@ public class PlainTextPasswordValidator implements PasswordValidationCallback.Pa
 
     private Logger logger = Logger.getLogger(this.getClass().getName());
 
-    public boolean validate(PasswordValidationCallback.Request request)
+    @SuppressWarnings({ "unused", "null" })
+	@Override
+	public boolean validate(PasswordValidationCallback.Request request)
             throws PasswordValidationCallback.PasswordValidationException {
 
         logger.info("Using configured PlainTextPasswordValidator................");

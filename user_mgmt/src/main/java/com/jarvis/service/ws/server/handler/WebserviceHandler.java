@@ -86,7 +86,7 @@ public class WebserviceHandler implements SOAPHandler<SOAPMessageContext> {
         return true;
     }
 
-    protected void processSoapMessage(boolean inBound, SOAPMessageContext messageContext, SOAPMessage message)
+    protected void processSoapMessage(boolean inBound, SOAPMessageContext messageContext, @SuppressWarnings("unused") SOAPMessage message)
             throws XWSSecurityException {
         HttpServletRequest req = (HttpServletRequest) messageContext.get(MessageContext.SERVLET_REQUEST);
         String ipAddress = "?.?.?.?";

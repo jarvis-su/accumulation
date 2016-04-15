@@ -20,7 +20,8 @@ public class MyTimestampValidator implements TimestampValidationCallback.Timesta
     private static Log logger = LogFactory.getLog(MyTimestampValidator.class);
     private static final TimeZone UTC = TimeZone.getTimeZone("UTC");
 
-    public void validate(Request request) throws TimestampValidationException {
+    @Override
+	public void validate(Request request) throws TimestampValidationException {
         if (request instanceof TimestampValidationCallback.UTCTimestampRequest) {
             TimestampValidationCallback.UTCTimestampRequest utcRequest = (TimestampValidationCallback.UTCTimestampRequest) request;
 

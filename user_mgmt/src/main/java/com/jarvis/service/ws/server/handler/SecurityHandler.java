@@ -55,7 +55,7 @@ public class SecurityHandler extends WebserviceHandler {
     public Set<QName> getHeaders() {
         QName securityHeader = new QName(
                 "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd", "Security", "wsse");
-        HashSet<QName> headers = new HashSet<QName>();
+        HashSet<QName> headers = new HashSet<>();
         headers.add(securityHeader);
         return headers;
     }

@@ -58,7 +58,8 @@ public class CrossSiteScriptWrapper extends HttpServletRequestWrapper {
     }
 
 
-    public String[] getParameterValues(String parameter) {
+    @Override
+	public String[] getParameterValues(String parameter) {
         String[] values = super.getParameterValues(parameter);
         if (values == null) {
             return null;
@@ -76,7 +77,8 @@ public class CrossSiteScriptWrapper extends HttpServletRequestWrapper {
     }
 
 
-    public String getParameter(String parameter) {
+    @Override
+	public String getParameter(String parameter) {
         String value = super.getParameter(parameter);
         if (value == null) {
             return null;
@@ -84,7 +86,8 @@ public class CrossSiteScriptWrapper extends HttpServletRequestWrapper {
         return sanitizeString(value);
     }
 
-    public String getHeader(String name) {
+    @Override
+	public String getHeader(String name) {
         String value = super.getHeader(name);
         if (value == null) {
             return null;

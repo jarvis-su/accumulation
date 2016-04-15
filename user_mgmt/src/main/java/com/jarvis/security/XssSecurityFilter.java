@@ -11,11 +11,11 @@ public class XssSecurityFilter implements Filter {
 
 
     @SuppressWarnings("unused")
-    private FilterConfig filterConfig;
+    private FilterConfig _filterConfig;
 
     @Override
     public void destroy() {
-        this.filterConfig = null;
+        this._filterConfig = null;
 
     }
 
@@ -28,7 +28,7 @@ public class XssSecurityFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        this.filterConfig = filterConfig;
+        this._filterConfig = filterConfig;
 
     }
 
