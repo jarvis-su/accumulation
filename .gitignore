@@ -4,3 +4,7 @@
 /user_mgmt/target
 /webApp/target
 /webservice_demo/target
+/service/.settings
+/user_mgmt/.settings
+/webApp/.settings
+/webservice_demo/.settings
