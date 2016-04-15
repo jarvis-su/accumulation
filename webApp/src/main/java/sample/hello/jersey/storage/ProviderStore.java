@@ -11,7 +11,7 @@ public class ProviderStore {
 	private static ProviderStore instance = null;
 	
 	private ProviderStore() {
-		store = new HashMap<String,Provider>();
+		store = new HashMap<>();
 		initOneContact();
 	}
 	

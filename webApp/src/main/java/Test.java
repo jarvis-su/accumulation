@@ -8,7 +8,8 @@ import java.util.Properties;
 public class Test {
 
 
-    public static void main(String[] args) {
+    @SuppressWarnings("rawtypes")
+	public static void main(String[] args) {
         System.out.println("asdfasdfasd");
         Properties properties = System.getProperties();
         Iterator it = properties.entrySet().iterator();

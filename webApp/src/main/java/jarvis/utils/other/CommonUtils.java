@@ -28,7 +28,8 @@ public class CommonUtils {
         return System.getProperty("file.separator");
     }
 
-    public static void propertiesTest() {
+    @SuppressWarnings("rawtypes")
+	public static void propertiesTest() {
         Properties properties = System.getProperties();
         Iterator it = properties.entrySet().iterator();
         while (it.hasNext()) {

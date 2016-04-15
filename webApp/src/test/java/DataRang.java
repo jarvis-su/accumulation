@@ -8,12 +8,12 @@ public class DataRang {
 
     public static void main(String[] args) {
 
-        List<Date> l1 = new ArrayList<Date>();
-        List<Date> l2 = new ArrayList<Date>();
-        List<Date> l3 = new ArrayList<Date>();
-        List<Date> l4 = new ArrayList<Date>();
-        List<Date> l5 = new ArrayList<Date>();
-        List<Date> l6 = new ArrayList<Date>();
+        List<Date> l1 = new ArrayList<>();
+        List<Date> l2 = new ArrayList<>();
+        List<Date> l3 = new ArrayList<>();
+        List<Date> l4 = new ArrayList<>();
+        List<Date> l5 = new ArrayList<>();
+        List<Date> l6 = new ArrayList<>();
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String d1 = "2015-01-01 13:01:00";

@@ -33,7 +33,7 @@ public class ProvidersResource {
 	@GET
 	@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 	public List<Provider> getProviders() {
-		List<Provider> providers = new ArrayList<Provider>();
+		List<Provider> providers = new ArrayList<>();
 		providers.addAll( ProviderStore.getStore().values() );
 		return providers;
 	}

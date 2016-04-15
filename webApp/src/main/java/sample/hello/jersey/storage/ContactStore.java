@@ -12,7 +12,7 @@ public class ContactStore {
 	private static ContactStore instance = null;
 	
 	private ContactStore() {
-		store = new HashMap<String,Contact>();
+		store = new HashMap<>();
 		initOneContact();
 	}
 	

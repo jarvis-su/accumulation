@@ -36,7 +36,7 @@ public class ContactsResource {
 	@GET
 	@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 	public List<Contact> getContacts(@Context SecurityContext sc) {
-		List<Contact> contacts = new ArrayList<Contact>();
+		List<Contact> contacts = new ArrayList<>();
 		contacts.addAll( ContactStore.getStore().values() );
 		return contacts;
 	}
