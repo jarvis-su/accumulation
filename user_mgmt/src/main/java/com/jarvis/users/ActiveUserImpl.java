@@ -1,89 +1,89 @@
 package com.jarvis.users;
 
+import sun.rmi.server.InactiveGroupException;
+
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Jarvis on 4/11/16.
  */
 public class ActiveUserImpl implements IActiveUser {
-    @Override
-    public Integer getIdentifier() {
-        return null;
+
+    private Integer userId;
+    private String loginName;
+    private String password;
+    private Integer badPasswordCnt;
+    private Date createdDate;
+    private Integer userTypeId;
+
+    private Role userRole;
+
+    private List<Privilege> userPrivileges;
+
+
+    public Integer getUserId() {
+        return userId;
     }
 
-    @Override
-    public String getSessionIdentifier() {
-        return null;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    @Override
-    public void setLastActive(Calendar lastActive) {
-
+    public String getLoginName() {
+        return loginName;
     }
 
-    @Override
-    public Calendar getLastActive() {
-        return null;
+    public void setLoginName(String loginName) {
+        this.loginName = loginName;
     }
 
-    @Override
-    public void setSessionStartTime(Calendar startTime) {
-
+    public String getPassword() {
+        return password;
     }
 
-    @Override
-    public Calendar getSessionStartTime() {
-        return null;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    @Override
-    public int getUserType() {
-        return 0;
+    public Integer getBadPasswordCnt() {
+        return badPasswordCnt;
     }
 
-    @Override
-    public boolean[] getPrivilegeBitmap() {
-        return new boolean[0];
+    public void setBadPasswordCnt(Integer badPasswordCnt) {
+        this.badPasswordCnt = badPasswordCnt;
     }
 
-    @Override
-    public Calendar getPwdExpireDate() {
-        return null;
+    public Date getCreatedDate() {
+        return createdDate;
     }
 
-    @Override
-    public boolean hasPwdExpired() {
-        return false;
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 
-    @Override
-    public int[] getOfficeIds() {
-        return new int[0];
+    public Integer getUserTypeId() {
+        return userTypeId;
     }
 
-    @Override
-    public String getName() {
-        return null;
+    public void setUserTypeId(Integer userTypeId) {
+        this.userTypeId = userTypeId;
     }
 
-    @Override
-    public int getUserId() {
-        return 0;
+    public Role getUserRole() {
+        return userRole;
     }
 
-    @Override
-    public int getAgencyId() {
-        return 0;
+    public void setUserRole(Role userRole) {
+        this.userRole = userRole;
     }
 
-    @Override
-    public void setUserEndDate(Date date) {
-
+    public List<Privilege> getUserPrivileges() {
+        return userPrivileges;
     }
 
-    @Override
-    public Date getUserEndDate() {
-        return null;
+    public void setUserPrivileges(List<Privilege> userPrivileges) {
+        this.userPrivileges = userPrivileges;
     }
 }

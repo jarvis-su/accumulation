@@ -1,14 +1,27 @@
 package com.jarvis.demo.manager.service;
 
+import com.jarvis.demo.manager.dao.UserManagerDao;
 import com.jarvis.users.IActiveUser;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Created by Jarvis on 4/14/16.
  */
 public class UserManagerImpl implements IUserManager {
+
+    @Autowired
+    public UserManagerDao userDao;
+
     @Override
     public IActiveUser login(String userName, String password) {
-        return null;
+        IActiveUser activeUser  = userDao.getUserInfo(userName);
+
+
+        return activeUser;
+    }
+
+    private void validatePassword(IActiveUser activeUser, String password){
+
     }
 
     @Override
