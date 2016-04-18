@@ -9,13 +9,15 @@ import java.util.List;
  * Created by Jarvis on 4/16/16.
  */
 public class JdbcTemplateTest {
-    @Test
+    private ApplicationContext applicationContext;
+
+	@Test
 
     // 使用配置文件 测试
 
     public void demo2() {
 
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
+        applicationContext = new ClassPathXmlApplicationContext(
 
                 "applicationContext.xml");
 
@@ -25,7 +27,7 @@ public class JdbcTemplateTest {
 
 
        // jdbcTemplate.execute("create table abcd(id int , name varchar(20))");
-       List list = jdbcTemplate.queryForList("SELECT * from users ");
+       List<?> list = jdbcTemplate.queryForList("SELECT * from users ");
 
     }
 }

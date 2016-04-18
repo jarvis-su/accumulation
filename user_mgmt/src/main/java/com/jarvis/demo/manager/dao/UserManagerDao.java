@@ -1,14 +1,10 @@
 package com.jarvis.demo.manager.dao;
 
-import com.jarvis.users.ActiveUserImpl;
-import com.jarvis.users.IActiveUser;
-import org.springframework.jdbc.core.PreparedStatementSetter;
-
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
+import com.jarvis.users.ActiveUserImpl;
 
 /**
  * Created by Jarvis on 4/16/16.
@@ -22,11 +18,11 @@ public class UserManagerDao extends BasicDao {
 
         Object[] values = new Object[1];
         values[1] = loginName;
-        List list = jdbcTemplate.queryForList(get_user_info_by_login_name, values);
+        List<?> list = jdbcTemplate.queryForList(get_user_info_by_login_name, values);
 
-        Iterator iterator = list.iterator();
+        Iterator<?> iterator = list.iterator();
         if (iterator.hasNext()) {
-            Map user = (Map) iterator.next();
+            Map<?, ?> user = (Map<?, ?>) iterator.next();
             activeUser = new ActiveUserImpl();
             activeUser.setUserId((Integer)user.get("user_id"));
         }

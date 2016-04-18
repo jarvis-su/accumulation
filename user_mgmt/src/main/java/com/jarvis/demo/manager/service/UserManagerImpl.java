@@ -20,7 +20,8 @@ public class UserManagerImpl implements IUserManager {
         return activeUser;
     }
 
-    private void validatePassword(IActiveUser activeUser, String password){
+    @SuppressWarnings("unused")
+	private void validatePassword(IActiveUser activeUser, String password){
 
     }
 

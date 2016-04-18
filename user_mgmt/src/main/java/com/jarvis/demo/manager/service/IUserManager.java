@@ -1,8 +1,6 @@
 package com.jarvis.demo.manager.service;
 
-import com.jarvis.demo.manager.dao.UserManagerDao;
 import com.jarvis.users.IActiveUser;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Created by Jarvis on 4/14/16.
