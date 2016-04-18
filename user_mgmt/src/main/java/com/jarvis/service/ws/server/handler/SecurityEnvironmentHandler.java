@@ -17,7 +17,7 @@ import com.sun.xml.wss.impl.callback.TimestampValidationCallback;
  */
 public class SecurityEnvironmentHandler implements CallbackHandler {
 
-    private Log4jAdapter logger = (Log4jAdapter) Log4jAdapter.getLogger(this.getClass().getName());
+    private Log4jAdapter logger = Log4jAdapter.getLog4jAdapter(this.getClass().getName());
     private static final UnsupportedCallbackException unsupported =
             new UnsupportedCallbackException(null, "Unsupported Callback Type Encountered");
 

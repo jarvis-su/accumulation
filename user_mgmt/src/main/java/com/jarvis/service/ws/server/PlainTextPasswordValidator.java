@@ -9,7 +9,7 @@ import com.sun.xml.wss.impl.callback.PasswordValidationCallback;
  */
 public class PlainTextPasswordValidator implements PasswordValidationCallback.PasswordValidator {
 
-    private Log4jAdapter logger = (Log4jAdapter) Log4jAdapter.getLogger(this.getClass().getName());
+    private Log4jAdapter logger = Log4jAdapter.getLog4jAdapter(this.getClass().getName());
 
     @SuppressWarnings({ "unused", "null" })
 	@Override

@@ -29,7 +29,7 @@ import com.sun.xml.wss.XWSSecurityException;
 public class WebserviceHandler implements SOAPHandler<SOAPMessageContext> {
 
 
-    protected static Log4jAdapter logger = (Log4jAdapter) Log4jAdapter.getLogger(WebserviceHandler.class.getName());
+    protected static Log4jAdapter logger = Log4jAdapter.getLog4jAdapter(WebserviceHandler.class.getName());
     protected static Transformer tf = null;
 
     protected boolean initialized = false;

@@ -16,7 +16,7 @@ import com.sun.xml.wss.impl.callback.TimestampValidationCallback.TimestampValida
  * Created by Jarvis on 4/11/16.
  */
 public class MyTimestampValidator implements TimestampValidationCallback.TimestampValidator {
-    private static Log4jAdapter logger = (Log4jAdapter) Log4jAdapter.getLogger(MyTimestampValidator.class);
+    private static Log4jAdapter logger = Log4jAdapter.getLog4jAdapter(MyTimestampValidator.class);
     private static final TimeZone UTC = TimeZone.getTimeZone("UTC");
 
     @Override
