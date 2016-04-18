@@ -1,7 +1,7 @@
 package com.jarvis.service.ws.server;
 
 import com.jarvis.supporter.logger.Log4jAdapter;
-import com.jarvis.users.ActiveUserImpl;
+import com.jarvis.users.User;
 import com.sun.xml.wss.impl.callback.PasswordValidationCallback;
 
 /**
@@ -19,7 +19,7 @@ public class PlainTextPasswordValidator implements PasswordValidationCallback.Pa
         logger.info("Using configured PlainTextPasswordValidator................");
         PasswordValidationCallback.PlainTextPasswordRequest plainTextRequest =
                 (PasswordValidationCallback.PlainTextPasswordRequest) request;
-        ActiveUserImpl user = null;
+        User user = null;
         //Check DB for user
         try {
             logger.info("Accessing DB for Authentication................");

@@ -2,6 +2,7 @@ package com.jarvis.demo.manager.service;
 
 import com.jarvis.demo.manager.dao.UserManagerDao;
 import com.jarvis.users.IActiveUser;
+import com.jarvis.users.User;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -13,8 +14,8 @@ public class UserManagerImpl implements IUserManager {
     public UserManagerDao userDao;
 
     @Override
-    public IActiveUser login(String userName, String password) {
-        IActiveUser activeUser  = userDao.getUserInfo(userName);
+    public User login(String userName, String password) {
+        User activeUser  = userDao.getUserInfo(userName);
 
 
         return activeUser;

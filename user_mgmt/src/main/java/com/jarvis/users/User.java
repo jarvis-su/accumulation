@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by Jarvis on 4/11/16.
  */
-public class ActiveUserImpl implements IActiveUser {
+public class User {
 
     private Integer userId;
     private String loginName;
@@ -14,6 +14,7 @@ public class ActiveUserImpl implements IActiveUser {
     private Integer badPasswordCnt;
     private Date createdDate;
     private Integer userTypeId;
+
 
     private Role userRole;
 
