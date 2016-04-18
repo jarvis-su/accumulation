@@ -10,7 +10,7 @@ import javax.jws.WebService;
 public class UserServiceImpl implements IUserService {
 
     @Override
-    public String login() {
+    public String login(String userName, String password) {
         return "hello";
     }
 }

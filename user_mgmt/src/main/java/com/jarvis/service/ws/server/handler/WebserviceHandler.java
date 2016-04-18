@@ -1,21 +1,27 @@
 package com.jarvis.service.ws.server.handler;
 
-import com.sun.xml.wss.XWSSecurityException;
-import org.apache.log4j.Logger;
+import java.io.ByteArrayOutputStream;
+import java.util.Collections;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.xml.namespace.QName;
 import javax.xml.soap.SOAPException;
 import javax.xml.soap.SOAPMessage;
-import javax.xml.transform.*;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.ws.WebServiceException;
 import javax.xml.ws.handler.MessageContext;
 import javax.xml.ws.handler.soap.SOAPHandler;
 import javax.xml.ws.handler.soap.SOAPMessageContext;
-import java.io.ByteArrayOutputStream;
-import java.util.Collections;
-import java.util.Set;
+
+import com.jarvis.supporter.logger.Log4jAdapter;
+import com.sun.xml.wss.XWSSecurityException;
 
 /**
  * Created by Jarvis on 4/11/16.
@@ -23,7 +29,7 @@ import java.util.Set;
 public class WebserviceHandler implements SOAPHandler<SOAPMessageContext> {
 
 
-    protected static Logger logger = Logger.getLogger(WebserviceHandler.class.getName());
+    protected static Log4jAdapter logger = (Log4jAdapter) Log4jAdapter.getLogger(WebserviceHandler.class.getName());
     protected static Transformer tf = null;
 
     protected boolean initialized = false;

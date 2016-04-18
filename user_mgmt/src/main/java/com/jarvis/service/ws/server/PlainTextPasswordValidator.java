@@ -1,7 +1,6 @@
 package com.jarvis.service.ws.server;
 
-import org.apache.log4j.Logger;
-
+import com.jarvis.supporter.logger.Log4jAdapter;
 import com.jarvis.users.ActiveUserImpl;
 import com.sun.xml.wss.impl.callback.PasswordValidationCallback;
 
@@ -10,7 +9,7 @@ import com.sun.xml.wss.impl.callback.PasswordValidationCallback;
  */
 public class PlainTextPasswordValidator implements PasswordValidationCallback.PasswordValidator {
 
-    private Logger logger = Logger.getLogger(this.getClass().getName());
+    private Log4jAdapter logger = (Log4jAdapter) Log4jAdapter.getLogger(this.getClass().getName());
 
     @SuppressWarnings({ "unused", "null" })
 	@Override

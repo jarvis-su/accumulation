@@ -1,11 +1,5 @@
 package com.jarvis.service.ws.server;
 
-import com.sun.xml.wss.impl.callback.TimestampValidationCallback;
-import com.sun.xml.wss.impl.callback.TimestampValidationCallback.Request;
-import com.sun.xml.wss.impl.callback.TimestampValidationCallback.TimestampValidationException;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -13,11 +7,16 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
+import com.jarvis.supporter.logger.Log4jAdapter;
+import com.sun.xml.wss.impl.callback.TimestampValidationCallback;
+import com.sun.xml.wss.impl.callback.TimestampValidationCallback.Request;
+import com.sun.xml.wss.impl.callback.TimestampValidationCallback.TimestampValidationException;
+
 /**
  * Created by Jarvis on 4/11/16.
  */
 public class MyTimestampValidator implements TimestampValidationCallback.TimestampValidator {
-    private static Log logger = LogFactory.getLog(MyTimestampValidator.class);
+    private static Log4jAdapter logger = (Log4jAdapter) Log4jAdapter.getLogger(MyTimestampValidator.class);
     private static final TimeZone UTC = TimeZone.getTimeZone("UTC");
 
     @Override

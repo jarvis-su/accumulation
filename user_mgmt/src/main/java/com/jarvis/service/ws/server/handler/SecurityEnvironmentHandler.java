@@ -6,10 +6,9 @@ import javax.security.auth.callback.Callback;
 import javax.security.auth.callback.CallbackHandler;
 import javax.security.auth.callback.UnsupportedCallbackException;
 
-import org.apache.log4j.Logger;
-
 import com.jarvis.service.ws.server.MyTimestampValidator;
 import com.jarvis.service.ws.server.PlainTextPasswordValidator;
+import com.jarvis.supporter.logger.Log4jAdapter;
 import com.sun.xml.wss.impl.callback.PasswordValidationCallback;
 import com.sun.xml.wss.impl.callback.TimestampValidationCallback;
 
@@ -18,7 +17,7 @@ import com.sun.xml.wss.impl.callback.TimestampValidationCallback;
  */
 public class SecurityEnvironmentHandler implements CallbackHandler {
 
-    private Logger logger = Logger.getLogger(this.getClass().getName());
+    private Log4jAdapter logger = (Log4jAdapter) Log4jAdapter.getLogger(this.getClass().getName());
     private static final UnsupportedCallbackException unsupported =
             new UnsupportedCallbackException(null, "Unsupported Callback Type Encountered");
 

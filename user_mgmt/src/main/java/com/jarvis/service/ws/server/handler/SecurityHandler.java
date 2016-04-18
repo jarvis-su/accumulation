@@ -1,15 +1,20 @@
 package com.jarvis.service.ws.server.handler;
 
-import com.sun.xml.wss.*;
-import org.apache.log4j.Logger;
+import java.io.FileInputStream;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.xml.namespace.QName;
 import javax.xml.soap.SOAPMessage;
 import javax.xml.ws.handler.MessageContext;
 import javax.xml.ws.handler.soap.SOAPMessageContext;
-import java.io.FileInputStream;
-import java.util.HashSet;
-import java.util.Set;
+
+import com.jarvis.supporter.logger.Log4jAdapter;
+import com.sun.xml.wss.ProcessingContext;
+import com.sun.xml.wss.SubjectAccessor;
+import com.sun.xml.wss.XWSSProcessor;
+import com.sun.xml.wss.XWSSProcessorFactory;
+import com.sun.xml.wss.XWSSecurityException;
 
 /**
  * Created by Jarvis on 4/11/16.
@@ -22,7 +27,7 @@ public class SecurityHandler extends WebserviceHandler {
 
     @Override
     protected void initialize(SOAPMessageContext messageContext) {
-        logger = Logger.getLogger(SecurityHandler.class.getName());
+        logger = (Log4jAdapter) Log4jAdapter.getLogger(SecurityHandler.class.getName());
 
         QName qName = (QName) messageContext.get(MessageContext.WSDL_INTERFACE);
         logger.info("Initializing secured handler for [" + qName.getLocalPart() + "] endpoint\n");
