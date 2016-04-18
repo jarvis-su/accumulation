@@ -1,15 +1,17 @@
 package com.jarvis.service.ws.server.handler;
 
-import com.jarvis.service.ws.server.MyTimestampValidator;
-import com.jarvis.service.ws.server.PlainTextPasswordValidator;
-import com.sun.xml.wss.impl.callback.PasswordValidationCallback;
-import com.sun.xml.wss.impl.callback.TimestampValidationCallback;
-import org.apache.log4j.Logger;
+import java.io.IOException;
 
 import javax.security.auth.callback.Callback;
 import javax.security.auth.callback.CallbackHandler;
 import javax.security.auth.callback.UnsupportedCallbackException;
-import java.io.IOException;
+
+import org.apache.log4j.Logger;
+
+import com.jarvis.service.ws.server.MyTimestampValidator;
+import com.jarvis.service.ws.server.PlainTextPasswordValidator;
+import com.sun.xml.wss.impl.callback.PasswordValidationCallback;
+import com.sun.xml.wss.impl.callback.TimestampValidationCallback;
 
 /**
  * Created by Jarvis on 4/11/16.
