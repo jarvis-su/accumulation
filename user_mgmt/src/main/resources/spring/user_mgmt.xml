@@ -3,6 +3,13 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <import resource="classpath:spring/applicationContext-database.xml"/>
-    <import resource="classpath:spring/user_mgmt.xml"/>
+       <bean id="userDao" class="com.jarvis.demo.manager.dao.UserManagerDao">
+
+
+       </bean>
+
+       <bean id="userManager" class="com.jarvis.demo.manager.service.UserManagerImpl">
+
+       </bean>
+
 </beans>

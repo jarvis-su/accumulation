@@ -49,7 +49,6 @@
         <param-value>classpath:applicationContext.xml,/WEB-INF/dispatcher-servlet.xml</param-value>
     </context-param>
 
-
     <filter>
         <filter-name>XSS</filter-name>
         <filter-class>com.jarvis.security.XssSecurityFilter</filter-class>
