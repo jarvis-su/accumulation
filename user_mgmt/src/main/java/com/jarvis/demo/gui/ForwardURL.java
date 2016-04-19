@@ -5,4 +5,6 @@ package com.jarvis.demo.gui;
  */
 public class ForwardURL {
     public static final String SUCCESS="SUCCESS";
+    public static final String HOME = "home";
+    public static final String MAIN = "main";
 }

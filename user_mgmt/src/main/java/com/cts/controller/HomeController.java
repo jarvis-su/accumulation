@@ -2,6 +2,7 @@ package com.cts.controller;
 
 import java.util.Comparator;
 
+import com.jarvis.demo.gui.ForwardURL;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +19,10 @@ public class HomeController {
     @Autowired
     Comparator<String> comparator;
 
-    @RequestMapping("/home")
+    @RequestMapping("/home1")
     public String home() {
         logger.info("HomeController: passing through.....");
-        return "home";
+        return ForwardURL.HOME;
     }
 
     @RequestMapping(value = "/compare", method = RequestMethod.GET)

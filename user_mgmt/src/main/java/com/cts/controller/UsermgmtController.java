@@ -34,6 +34,6 @@ public class UsermgmtController {
     @RequestMapping(value = "/list/{username}", method = RequestMethod.GET, params="param=show")
     public String showUser(@PathVariable("username") String name, Model model) {
         model.addAttribute("username", name);
-        return "home";
+        return "home_bak";
     }
 }

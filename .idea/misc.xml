@@ -4,6 +4,7 @@
     <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/dawdler" />
     <file type="web" url="file://$PROJECT_DIR$/service" />
     <file type="web" url="file://$PROJECT_DIR$/sys_monitor" />
     <file type="web" url="file://$PROJECT_DIR$/user_mgmt" />
@@ -21,6 +22,7 @@
         <option value="$PROJECT_DIR$/user_mgmt/pom.xml" />
         <option value="$PROJECT_DIR$/webApp/pom.xml" />
         <option value="$PROJECT_DIR$/webservice_demo/pom.xml" />
+        <option value="$PROJECT_DIR$/dawdler/pom.xml" />
       </list>
     </option>
   </component>

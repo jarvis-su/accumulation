@@ -16,7 +16,7 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
     <!-- use annotation to scan -->
     <mvc:annotation-driven/>
-    <context:component-scan base-package="com.cts.controller,com.cts.service,com.cts.domain"/>
+    <context:component-scan base-package="com.cts.controller,com.cts.service,com.cts.domain,com.jarvis.demo.gui.controller"/>
 
     <!-- append prefix and suffix to view -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

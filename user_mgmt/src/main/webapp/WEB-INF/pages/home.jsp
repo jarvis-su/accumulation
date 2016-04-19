@@ -1,18 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Home</title>
+    <title></title>
 </head>
 <body>
-
-home : ${username }
-
-${message} ${name}
-
-${result }
+<form name="loginForm" id="loginForm" action="/login">
+Name :<input type="text" name="userName" id="userName" />
+<br/>
+Password :<input type="password" name ="userPassword" id="userPassword">
+<br/>
+<button type="submit">ok</button>
+  </form>
 
 </body>
 </html>
