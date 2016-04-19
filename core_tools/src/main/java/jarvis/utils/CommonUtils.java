@@ -1,12 +1,12 @@
 package jarvis.utils;
 
-import logging.util.CustomLogManager;
-
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import logging.util.CustomLogManager;
 
 /**
  * CommonUtils
@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 public class CommonUtils {
     private static Logger logger = CustomLogManager.getLogger(CommonUtils.class.getName());
 
-    public static void releaseResource(Object source, AutoCloseable... closeableResource) {
+    public static void releaseResource(@SuppressWarnings("unused") Object source, AutoCloseable... closeableResource) {
         if (closeableResource == null || closeableResource.length == 0) {
             return;
         }
@@ -39,9 +39,10 @@ public class CommonUtils {
 
     public static void propertiesTest() {
         Properties properties = System.getProperties();
-        Iterator it = properties.entrySet().iterator();
+        Iterator<?> it = properties.entrySet().iterator();
         while (it.hasNext()) {
-            Map.Entry entry = (Map.Entry) it.next();
+            @SuppressWarnings("rawtypes")
+			Map.Entry entry = (Map.Entry) it.next();
             System.out.print(entry.getKey() + "=");
             System.out.println(entry.getValue());
         }

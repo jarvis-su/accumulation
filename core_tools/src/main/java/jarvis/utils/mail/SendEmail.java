@@ -1,6 +1,12 @@
 package jarvis.utils.mail;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import logging.util.CustomLogManager;
+
 public class SendEmail {
+	private static Logger logger = CustomLogManager.getLogger(SendEmail.class.getName());
 	public SendEmail() {
 	}
 
@@ -28,8 +34,7 @@ public class SendEmail {
 		try {
 			SendEmail.send("带附件的邮件测试", "mail2sujie@gmail.com", "测试内容");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.log(Level.WARNING," ", e);
 		}
 	}
 }

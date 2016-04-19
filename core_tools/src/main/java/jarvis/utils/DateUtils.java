@@ -283,6 +283,7 @@ public class DateUtils {
                     dateString, new String[]{"yyyy-MM-dd", "yyyy-M-d",
                             "yyyy-MM-d", "yyyy-M-dd"});
         } catch (ParseException e) {
+        	e.printStackTrace();
             return null;
         }
     }
@@ -299,6 +300,7 @@ public class DateUtils {
                     timeString, new String[]{"hh:mm:ss", "h:m:s", "hh:mm",
                             "h:m"});
         } catch (ParseException e) {
+        	e.printStackTrace();
             return null;
         }
     }
@@ -316,6 +318,7 @@ public class DateUtils {
                             "yyyy-M-d H:m:s", "yyyy-MM-dd H:m:s",
                             "yyyy-M-d HH:mm:ss"});
         } catch (ParseException e) {
+        	e.printStackTrace();
             return null;
         }
     }
@@ -489,7 +492,7 @@ public class DateUtils {
         return calendar.getTime();
     }
 
-    private static ThreadLocal<SimpleDateFormat> defaultDateFormat = new ThreadLocal<SimpleDateFormat>();
+    private static ThreadLocal<SimpleDateFormat> defaultDateFormat = new ThreadLocal<>();
 
     public static final SimpleDateFormat getDefaultDateFormat() {
         if (null == defaultDateFormat.get()) {
@@ -504,6 +507,7 @@ public class DateUtils {
         try {
             result = getDefaultDateFormat().parse(date);
         } catch (ParseException e) {
+        	e.printStackTrace();
             logger.error("Can't parse {} to Date", date);
         }
 

@@ -5,7 +5,6 @@ import java.io.File;
 public class CallExe {
 	public static void main(String[] args) {
 		Runtime rt = Runtime.getRuntime();
-		@SuppressWarnings("unused")
 		Process p = null;
 		String fileLac = "";
 		try {
@@ -13,6 +12,7 @@ public class CallExe {
 					+ File.separator + "QQ.exe";// 所调用的程序路径
 			p = rt.exec(fileLac);
 		} catch (Exception e) {
+			e.printStackTrace();
 			System.out.println("open failure");
 		}
 	}

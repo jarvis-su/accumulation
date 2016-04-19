@@ -6,7 +6,7 @@ import java.util.Hashtable;
 import java.util.Map;
 
 public class IPSeekerSimpleCache extends IPSeeker {
-	private final Map<byte[], IPLocation> cache = new Hashtable<byte[], IPLocation>();
+	private final Map<byte[], IPLocation> cache = new Hashtable<>();
 	
 	public IPSeekerSimpleCache(Path path) throws IOException {
 		super(path);

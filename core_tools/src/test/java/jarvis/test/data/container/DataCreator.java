@@ -30,7 +30,7 @@ public abstract class DataCreator {
 
     @SuppressWarnings("rawtypes")
     public Collection getBeans(String beanName) {
-        List<Object[]> list = new ArrayList<Object[]>();
+        List<Object[]> list = new ArrayList<>();
         for (Object o : (List) getBean(beanName)) {
             list.add(new Object[]{o});
         }

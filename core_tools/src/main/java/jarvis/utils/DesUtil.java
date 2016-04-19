@@ -8,10 +8,10 @@ import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
-
-import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  * DesUtil

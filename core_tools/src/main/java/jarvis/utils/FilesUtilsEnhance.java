@@ -1,7 +1,5 @@
 package jarvis.utils;
 
-import logging.util.CustomLogManager;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -10,6 +8,8 @@ import java.math.BigDecimal;
 import java.nio.channels.FileChannel;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import logging.util.CustomLogManager;
 
 /**
  * Created by Jarvis on 3/30/16.

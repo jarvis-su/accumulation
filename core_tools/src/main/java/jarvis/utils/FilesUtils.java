@@ -1,13 +1,14 @@
 package jarvis.utils;
 
-import org.apache.commons.lang.StringUtils;
-
-import javax.swing.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.List;
+
+import javax.swing.JOptionPane;
+
+import org.apache.commons.lang.StringUtils;
 
 /**
  * FilesUtils
@@ -110,10 +111,11 @@ public class FilesUtils {
      */
     private static int filesToBeCopied = -1;
     // 要创建的线程数
-    private static int THREAD_COUNT = 4;
+    @SuppressWarnings("unused")
+	private static int THREAD_COUNT = 4;
     private static int n = 0;
     private static String sourcePath;
-    private static String destPath;
+    private static String _destPath;
 
     // 递归的方式读取文件
     public static int setCopiedFiles(String path, List<File> pool) {
@@ -146,7 +148,7 @@ public class FilesUtils {
         sourcePath = temp;
         temp = JOptionPane
                 .showInputDialog("Input Target File Path(like C:\\\\projects) :");
-        destPath = temp;
+        _destPath = temp;
     }
 
     public static String getSourceFilePath() {
@@ -154,6 +156,6 @@ public class FilesUtils {
     }
 
     public static String getTargetFilePath() {
-        return destPath;
+        return _destPath;
     }
 }

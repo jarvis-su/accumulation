@@ -4,6 +4,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
@@ -17,6 +19,10 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.mail.internet.MimeUtility;
+
+import org.junit.experimental.theories.Theories;
+
+import logging.util.CustomLogManager;
 
 /**
  * 本程序用java来实现Email的发送， 所用到的协议为：smtp
@@ -43,7 +49,9 @@ public class EmailHandle {
 
 	private Multipart mp;// 附件添加的组件
 
-	private List<FileDataSource> files = new LinkedList<FileDataSource>();// 存放附件文件
+	private List<FileDataSource> files = new LinkedList<>();// 存放附件文件
+	
+	private static Logger logger = CustomLogManager.getLogger(EmailHandle.class.getName());
 
 	public EmailHandle(String smtp) {
 		sendUserName = "";
@@ -63,13 +71,14 @@ public class EmailHandle {
 			// 用props对象来创建并初始化session对象
 			session = Session.getDefaultInstance(props, null);
 		} catch (Exception e) {
-			System.err.println("获取邮件会话对象时发生错误！" + e);
+			logger.log(Level.WARNING,"获取邮件会话对象时发生错误！  ", e);
 			return false;
 		}
 		try {
 			mimeMsg = new MimeMessage(session); // 用session对象来创建并初始化邮件对象
 			mp = new MimeMultipart();// 生成附件组件的实例
 		} catch (Exception e) {
+			logger.log(Level.WARNING,"获取邮件会话对象时发生错误！  ", e);
 			return false;
 		}
 		return true;
@@ -105,6 +114,7 @@ public class EmailHandle {
 		try {
 			mimeMsg.setSubject(mailSubject);
 		} catch (Exception e) {
+			logger.log(Level.WARNING,"获取邮件会话对象时发生错误！  ", e);
 			return false;
 		}
 		return true;
@@ -125,7 +135,7 @@ public class EmailHandle {
 			// 在组件上添加邮件文本
 			mp.addBodyPart(bp);
 		} catch (Exception e) {
-			System.err.println("设置邮件正文时发生错误！" + e);
+			logger.log(Level.WARNING,"设置邮件正文时发生错误！  ", e);
 			return false;
 		}
 		return true;
@@ -148,7 +158,7 @@ public class EmailHandle {
 			mp.addBodyPart(bp);// 添加附件
 			files.add(fileds);
 		} catch (Exception e) {
-			System.err.println("增加邮件附件：" + filename + "发生错误！" + e);
+			logger.log(Level.WARNING,"增加邮件附件：" + filename + "发生错误！", e);
 			return false;
 		}
 		return true;
@@ -164,6 +174,7 @@ public class EmailHandle {
 				}
 			}
 		} catch (Exception e) {
+			logger.log(Level.WARNING," ", e);
 			return false;
 		}
 		return true;
@@ -180,6 +191,7 @@ public class EmailHandle {
 		try {
 			mimeMsg.setFrom(new InternetAddress(from));
 		} catch (Exception e) {
+			logger.log(Level.WARNING," ", e);
 			return false;
 		}
 		return true;
@@ -198,6 +210,7 @@ public class EmailHandle {
 			mimeMsg.setRecipients(Message.RecipientType.TO,
 					InternetAddress.parse(to));
 		} catch (Exception e) {
+			logger.log(Level.WARNING," ", e);
 			return false;
 		}
 		return true;
@@ -216,6 +229,7 @@ public class EmailHandle {
 			mimeMsg.setRecipients(javax.mail.Message.RecipientType.CC,
 					InternetAddress.parse(copyto));
 		} catch (Exception e) {
+			logger.log(Level.WARNING," ", e);
 			return false;
 		}
 		return true;
@@ -229,7 +243,7 @@ public class EmailHandle {
 	public boolean sendEmail() throws Exception {
 		mimeMsg.setContent(mp);
 		mimeMsg.saveChanges();
-		System.out.println("正在发送邮件....");
+		logger.log(Level.FINEST," 正在发送邮件.... ");
 		Session mailSession = Session.getInstance(props, null);
 		Transport transport = mailSession.getTransport("smtp");
 		// 连接邮件服务器并进行身份验证
@@ -238,7 +252,7 @@ public class EmailHandle {
 		// 发送邮件
 		transport.sendMessage(mimeMsg,
 				mimeMsg.getRecipients(Message.RecipientType.TO));
-		System.out.println("发送邮件成功！");
+		logger.log(Level.FINEST," 发送邮件成功！... ");
 		transport.close();
 		return true;
 	}

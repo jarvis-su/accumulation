@@ -11,6 +11,7 @@ public final class FileUtil {
 			final URL url = Class.class.getResource(name);
 			return (url != null) ? Paths.get(url.toURI()) : null;
 		} catch (URISyntaxException e) {
+			e.printStackTrace();
 			return null;
 		}
 	}

@@ -1,10 +1,10 @@
 package jarvis.utils;
 
-import logging.util.CustomLogManager;
-
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import logging.util.CustomLogManager;
 
 public class JarvisStringUtils {
     private static Logger logger = CustomLogManager.getLogger(JarvisStringUtils.class.getName());

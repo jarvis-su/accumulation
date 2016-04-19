@@ -1,9 +1,9 @@
 package jarvis.test;
 
+import java.io.File;
+
 import jarvis.utils.FilesUtilsEnhance;
 import junit.framework.TestCase;
-
-import java.io.*;
 
 /**
  * Test

@@ -1,13 +1,14 @@
 package jarvis;
 
-import logging.util.CustomLogManager;
-import org.junit.Test;
-
 import java.io.InputStream;
 import java.util.Enumeration;
 import java.util.Properties;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
+
+import org.junit.Test;
+
+import logging.util.CustomLogManager;
 
 /**
  * Created by jarvis on 1/22/2016.
@@ -40,7 +41,8 @@ public class ReadProperties {
     @Test
     public void Two() throws Exception {
         // 获得类加载器，然后把文件作为一个流获取
-        InputStream in = ReadProperties.class.getClassLoader()
+        @SuppressWarnings("resource")
+		InputStream in = ReadProperties.class.getClassLoader()
                 .getResourceAsStream("patterns.properties");
         // 创建Properties实例
         Properties prop = new Properties();

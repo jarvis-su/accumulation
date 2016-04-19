@@ -1,14 +1,14 @@
 package jarvis;
 
-import jarvis.utils.DesUtil;
-import logging.util.*;
-import org.apache.commons.lang3.time.FastDateFormat;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.logging.Logger;
+
+import org.apache.commons.lang3.time.FastDateFormat;
+
+import jarvis.utils.DesUtil;
+import logging.util.CustomLogManager;
 
 /**
  * Created by jarvis on 1/22/2016.
