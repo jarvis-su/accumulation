@@ -1,11 +1,3 @@
-/*
- * Copyright (c) 2016.
- *  Email : Jarvis_su@126.com
- *
- *
- *
- */
-
 package jarvis.test;
 
 import jarvis.utils.FilesUtilsEnhance;
