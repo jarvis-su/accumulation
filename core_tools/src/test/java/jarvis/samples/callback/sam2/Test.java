@@ -1,4 +1,4 @@
-package jarvis.samples.callback;
+package jarvis.samples.callback.sam2;
 
 public class Test {
 	public static void main(String[] args) {

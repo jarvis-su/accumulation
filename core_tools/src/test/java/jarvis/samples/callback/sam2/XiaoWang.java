@@ -1,4 +1,4 @@
-package jarvis.samples.callback;
+package jarvis.samples.callback.sam2;
 
 public class XiaoWang implements CallBack {
 

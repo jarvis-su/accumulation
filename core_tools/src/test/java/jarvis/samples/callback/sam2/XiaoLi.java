@@ -1,4 +1,4 @@
-package jarvis.samples.callback;
+package jarvis.samples.callback.sam2;
 
 public class XiaoLi {
 	public void executeMessage(CallBack callBack, String question) {
