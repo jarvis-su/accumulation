@@ -121,7 +121,7 @@ public class DesUtil {
         return cipher.doFinal(data);
     }
 
-    public static String sha512Hex(String password) {
+    public static String sha512HexEncrypt(String password) {
         return DigestUtils.sha512Hex(password.trim());
     }
 }

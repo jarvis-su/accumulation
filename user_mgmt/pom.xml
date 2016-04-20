@@ -45,6 +45,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>jarvis</groupId>
+            <artifactId>demo.core_tools</artifactId>
+            <version>${core.tools.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.glassfish.metro</groupId>
             <artifactId>webservices-rt</artifactId>
             <version>2.3</version>

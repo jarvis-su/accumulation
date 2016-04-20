@@ -29,8 +29,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="demo.core_tools" />
-        <module name="webApp" />
         <module name="webservice_demo" />
       </profile>
       <profile default="false" name="Annotation profile for service" enabled="true">
@@ -61,16 +59,30 @@
         <processorPath useClasspath="true" />
         <module name="dawdler" />
       </profile>
+      <profile default="false" name="Annotation profile for demo.core_tools" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="demo.core_tools" />
+      </profile>
+      <profile default="false" name="Annotation profile for webApp" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="webApp" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="dawdler" target="1.8" />
-      <module name="demo.core_tools" target="1.5" />
+      <module name="demo.core_tools" target="1.8" />
       <module name="demo.parent" target="1.7" />
       <module name="demo.sys_monitor" target="1.8" />
       <module name="demo.user_mgmt" target="1.8" />
       <module name="distribution" target="1.7" />
       <module name="service" target="1.8" />
-      <module name="webApp" target="1.5" />
+      <module name="webApp" target="1.8" />
       <module name="webservice_demo" target="1.5" />
     </bytecodeTargetLevel>
   </component>

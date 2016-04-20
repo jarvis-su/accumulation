@@ -14,6 +14,7 @@ public class User {
     private Integer badPasswordCnt;
     private Date createdDate;
     private Integer userTypeId;
+    private Integer userStatusId;
 
 
     private Role userRole;
@@ -83,5 +84,13 @@ public class User {
 
     public void setUserPrivileges(List<Privilege> userPrivileges) {
         this.userPrivileges = userPrivileges;
+    }
+
+    public Integer getUserStatusId() {
+        return userStatusId;
+    }
+
+    public void setUserStatusId(Integer userStatusId) {
+        this.userStatusId = userStatusId;
     }
 }

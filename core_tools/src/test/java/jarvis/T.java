@@ -19,8 +19,8 @@ public class T {
     public static void main(String[] args) {
 //        logger.fine("warning test!");
 
-        logger.info("1111 = " + DesUtil.sha512Hex("1111"));
-        logger.info("global = " + DesUtil.sha512Hex("global"));
+        logger.info("1111 = " + DesUtil.sha512HexEncrypt("1111"));
+        logger.info("global = " + DesUtil.sha512HexEncrypt("global"));
 
         GregorianCalendar cal = new GregorianCalendar();
 //        cal.setTime((Date) date.clone());
