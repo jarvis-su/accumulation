@@ -1,5 +1,9 @@
 package com.jarvis.service.ws.server.users;
 
+import com.jarvis.demo.manager.service.IUserManager;
+import com.jarvis.users.User;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.jws.WebService;
 
 /**
@@ -9,8 +13,12 @@ import javax.jws.WebService;
 
 public class UserServiceImpl implements IUserService {
 
+    @Autowired
+    IUserManager userManager;
+
     @Override
     public String login(String userName, String password) {
-        return "hello";
+        User user = userManager.login(userName, password);
+        return user.getLoginName();
     }
 }
