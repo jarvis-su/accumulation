@@ -5,11 +5,14 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import logging.util.CustomLogManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -22,6 +25,7 @@ import org.xml.sax.SAXException;
  * @author whwang
  */
 public class TestDom2 {
+    private final static Logger logger = CustomLogManager.getLogger(TestDom2.class.getName());
 
     public static void main(String[] args) {
         read();
@@ -51,13 +55,8 @@ public class TestDom2 {
                     System.err.println("\t文本节点：" + Arrays.toString(college.getTextContent().getBytes()));
                 }
             }
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (ParserConfigurationException|SAXException|IOException e) {
+            logger.log(Level.WARNING,"",e);
             e.printStackTrace();
         }
 

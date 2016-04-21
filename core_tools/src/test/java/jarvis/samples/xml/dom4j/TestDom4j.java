@@ -6,8 +6,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import jarvis.samples.xml.Temp;
+import logging.util.CustomLogManager;
 import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -24,6 +27,8 @@ import org.dom4j.io.XMLWriter;
  * @author whwang
  */
 public class TestDom4j {
+    private final static Logger logger = CustomLogManager.getLogger(TestDom4j.class.getName());
+
     public static void main(String[] args) {
         read1();
         read2();
@@ -38,6 +43,7 @@ public class TestDom4j {
             Element root = doc.getRootElement();
             readNode(root, "");
         } catch (DocumentException e) {
+            logger.log(Level.WARNING,"",e);
             e.printStackTrace();
         }
     }
@@ -69,6 +75,7 @@ public class TestDom4j {
             Document doc = reader.read(in);
             doc.accept(new MyVistor());
         } catch (DocumentException e) {
+            logger.log(Level.WARNING,"",e);
             e.printStackTrace();
         }
     }
@@ -95,6 +102,7 @@ public class TestDom4j {
             out.flush();
             out.close();
         } catch (IOException e) {
+            logger.log(Level.WARNING,"",e);
             e.printStackTrace();
         }
     }
@@ -102,6 +110,7 @@ public class TestDom4j {
 
 class MyVistor extends VisitorSupport {
     public void visit(Attribute node) {
+
         System.out.println("Attibute: " + node.getName() + "="
                 + node.getValue());
     }

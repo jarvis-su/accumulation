@@ -2,6 +2,8 @@ package jarvis.samples.xml;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -12,6 +14,7 @@ import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
+import logging.util.CustomLogManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -20,6 +23,7 @@ import org.xml.sax.SAXException;
  * Created by Jarvis on 4/21/16.
  */
 public class TestXpath {
+    private final static Logger logger = CustomLogManager.getLogger(TestXpath.class.getName());
 
 
     public static void main(String[] args) {
@@ -41,14 +45,9 @@ public class TestXpath {
             for (int i = 0; i < nodes.getLength(); i++) {
                 System.out.println("name = " + nodes.item(i).getNodeValue());
             }
-        } catch (XPathExpressionException e) {
-            e.printStackTrace();
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (XPathExpressionException | ParserConfigurationException | SAXException | IOException e) {
+            logger.log(Level.WARNING, " catch exception ", e);
+//            e.printStackTrace();
         }
     }
 

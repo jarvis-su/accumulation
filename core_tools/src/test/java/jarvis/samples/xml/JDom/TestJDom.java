@@ -6,8 +6,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import jarvis.samples.xml.Temp;
+import logging.util.CustomLogManager;
 import org.jdom.Attribute;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -21,6 +24,9 @@ import org.jdom.output.XMLOutputter;
  * @author whwang
  */
 public class TestJDom {
+
+    private final static Logger logger = CustomLogManager.getLogger(TestJDom.class.getName());
+
     public static void main(String[] args) {
         read();
 //        write();
@@ -35,10 +41,9 @@ public class TestJDom {
             // 获取根节点 <university>
             Element root = doc.getRootElement();
             readNode(root, "");
-        } catch (JDOMException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (JDOMException|IOException e) {
+            logger.log(Level.WARNING,"",e);
+//            e.printStackTrace();
         }
     }
 
@@ -90,10 +95,9 @@ public class TestJDom {
             file.createNewFile();
             FileOutputStream fos = new FileOutputStream(file);
             out.output(doc, fos);
-        } catch (JDOMException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (JDOMException|IOException e) {
+            logger.log(Level.WARNING,"",e);
+//            e.printStackTrace();
         }
     }
 

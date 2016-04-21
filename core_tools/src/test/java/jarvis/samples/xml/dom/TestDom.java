@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -18,6 +20,7 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import jarvis.samples.xml.Temp;
+import logging.util.CustomLogManager;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -31,6 +34,7 @@ import org.xml.sax.SAXException;
  * @author whwang
  */
 public class TestDom {
+    private final static Logger logger = CustomLogManager.getLogger(TestDom.class.getName());
 
     public static void main(String[] args) {
         read();
@@ -76,14 +80,9 @@ public class TestDom {
                     }
                 }
             }
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (ParserConfigurationException|SAXException|IOException e) {
+//            e.printStackTrace();
+            logger.log(Level.WARNING,"",e);
         }
 
     }
@@ -137,14 +136,19 @@ public class TestDom {
             transFormer.transform(domSource, xmlResult);
             System.out.println(file.getAbsolutePath());
         } catch (ParserConfigurationException e) {
+            logger.log(Level.WARNING,"",e);
             e.printStackTrace();
         } catch (SAXException e) {
+            logger.log(Level.WARNING,"",e);
             e.printStackTrace();
         } catch (IOException e) {
+            logger.log(Level.WARNING,"",e);
             e.printStackTrace();
         } catch (TransformerConfigurationException e) {
+            logger.log(Level.WARNING,"",e);
             e.printStackTrace();
         } catch (TransformerException e) {
+            logger.log(Level.WARNING,"",e);
             e.printStackTrace();
         }
     }

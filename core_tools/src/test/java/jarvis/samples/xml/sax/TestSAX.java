@@ -3,12 +3,15 @@ package jarvis.samples.xml.sax;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
 import jarvis.samples.xml.Temp;
+import logging.util.CustomLogManager;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.Locator;
@@ -21,6 +24,8 @@ import org.xml.sax.helpers.DefaultHandler;
  */
 public class TestSAX {
 
+    private final static Logger logger = CustomLogManager.getLogger(TestSAX.class.getName());
+
     public static void main(String[] args) {
         read();
         write();
@@ -32,12 +37,9 @@ public class TestSAX {
             SAXParser parser = factory.newSAXParser();
             InputStream in = TestSAX.class.getClassLoader().getResourceAsStream(Temp.textXmlFileName);
             parser.parse(in, new MyHandler());
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (ParserConfigurationException|SAXException|IOException e) {
+            logger.log(Level.WARNING,"",e);
+//            e.printStackTrace();
         }
     }
 
