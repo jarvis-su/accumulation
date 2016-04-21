@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<university name="pku">
+    <college name="c1">
+        <class name="class1">
+            <student name="stu1" sex='male' age="21" />
+            <student name="stu2" sex='female' age="20" />
+            <student name="stu3" sex='female' age="20" />
+        </class>
+    </college>
+</university>
