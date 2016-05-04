@@ -12,7 +12,7 @@
         <nexus.releases.server.ip>192.168.31.100</nexus.releases.server.ip>
         <nexus.snapshots.server.ip>192.168.31.100</nexus.snapshots.server.ip>
         <jar.spring.version>4.1.2.RELEASE</jar.spring.version>
-        <jar.struts.version>2.3.1.2</jar.struts.version>
+        <jar.struts.version>2.3.28.1</jar.struts.version>
     </properties>
 
     <distributionManagement>
