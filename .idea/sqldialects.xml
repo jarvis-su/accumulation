@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/db-mgmt/src/main/resources/db/migration/V1.001__init_basic_tables.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/db-mgmt/src/main/resources/db/migration/V1.001__basic_tables.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/db-mgmt/src/main/resources/db/migration/V2.001__user_mgmt_tables.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/user_mgmt/src/main/database/day_0.sql" dialect="Sybase" />
   </component>
 </project>
