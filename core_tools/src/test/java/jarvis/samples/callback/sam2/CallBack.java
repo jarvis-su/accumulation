@@ -6,5 +6,5 @@ package jarvis.samples.callback.sam2;
  *
  */
 public interface CallBack {
-	public void solve(String result);
+	void solve(String result);
 }

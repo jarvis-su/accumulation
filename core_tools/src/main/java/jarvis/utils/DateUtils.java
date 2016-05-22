@@ -280,8 +280,8 @@ public class DateUtils {
     public static Date parseDate(String dateString) {
         try {
             return org.apache.commons.lang3.time.DateUtils.parseDate(
-                    dateString, new String[]{"yyyy-MM-dd", "yyyy-M-d",
-                            "yyyy-MM-d", "yyyy-M-dd"});
+                    dateString, "yyyy-MM-dd", "yyyy-M-d",
+                    "yyyy-MM-d", "yyyy-M-dd");
         } catch (ParseException e) {
         	e.printStackTrace();
             return null;
@@ -297,8 +297,8 @@ public class DateUtils {
     public static Date parseTime(String timeString) {
         try {
             return org.apache.commons.lang3.time.DateUtils.parseDate(
-                    timeString, new String[]{"hh:mm:ss", "h:m:s", "hh:mm",
-                            "h:m"});
+                    timeString, "hh:mm:ss", "h:m:s", "hh:mm",
+                    "h:m");
         } catch (ParseException e) {
         	e.printStackTrace();
             return null;
@@ -314,9 +314,9 @@ public class DateUtils {
     public static Date parseDateTime(String timeString) {
         try {
             return org.apache.commons.lang3.time.DateUtils.parseDate(
-                    timeString, new String[]{"yyyy-MM-dd HH:mm:ss",
-                            "yyyy-M-d H:m:s", "yyyy-MM-dd H:m:s",
-                            "yyyy-M-d HH:mm:ss"});
+                    timeString, "yyyy-MM-dd HH:mm:ss",
+                    "yyyy-M-d H:m:s", "yyyy-MM-dd H:m:s",
+                    "yyyy-M-d HH:mm:ss");
         } catch (ParseException e) {
         	e.printStackTrace();
             return null;

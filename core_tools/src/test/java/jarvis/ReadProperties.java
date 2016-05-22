@@ -30,7 +30,7 @@ public class ReadProperties {
         // 遍历
         while (allName.hasMoreElements()) {
             // 获取每一个名称
-            String name = (String) allName.nextElement();
+            String name = allName.nextElement();
             // 利用已得到的名称通过资源包获得相应的值
             String value = bundle.getString(name);
             logger.info(name + "=" + value);

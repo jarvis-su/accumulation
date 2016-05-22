@@ -54,7 +54,7 @@ public class DesUtil {
      * @throws IOException
      * @throws Exception
      */
-    public static String decrypt(String data, String key) throws IOException,
+    public static String decrypt(String data, String key) throws
             Exception {
         if (data == null)
             return null;

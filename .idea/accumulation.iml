@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/dawdler/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/dawdler/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/dawdler/src/test/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/db-mgmt/src/main/resources" type="java-resource" />
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
