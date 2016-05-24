@@ -3,13 +3,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>jarvis</groupId>
-	<artifactId>demo.core_tools</artifactId>
+	<artifactId>core_tools</artifactId>
 
 	<version>1.0-SNAPSHOT</version>
 	<!-- <version>1.0.01</version> -->
 	<packaging>jar</packaging>
 
-	<name>demo.core_tools</name>
+	<name>core_tools</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -210,7 +210,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>demo.core_tools</finalName>
+		<finalName>core_tools</finalName>
 
 		<resources>
 			<resource>

@@ -77,10 +77,10 @@
     <bytecodeTargetLevel>
       <module name="dawdler" target="1.8" />
       <module name="demo.core_tools" target="1.8" />
-      <module name="demo.parent" target="1.7" />
+      <module name="demo.parent" target="1.8" />
       <module name="demo.sys_monitor" target="1.8" />
       <module name="demo.user_mgmt" target="1.8" />
-      <module name="distribution" target="1.7" />
+      <module name="distribution" target="1.8" />
       <module name="service" target="1.8" />
       <module name="webApp" target="1.8" />
       <module name="webservice_demo" target="1.5" />

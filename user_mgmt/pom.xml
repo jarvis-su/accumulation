@@ -2,10 +2,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>jarvis</groupId>
-    <artifactId>demo.user_mgmt</artifactId>
+    <artifactId>user_mgmt</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>demo.user_mgmt Maven Webapp</name>
+    <name>user_mgmt Maven Webapp</name>
     <url>http://maven.apache.org</url>
 
 
@@ -46,7 +46,7 @@
     <dependencies>
         <dependency>
             <groupId>jarvis</groupId>
-            <artifactId>demo.core_tools</artifactId>
+            <artifactId>core_tools</artifactId>
             <version>${core.tools.version}</version>
         </dependency>
 
@@ -169,7 +169,7 @@
 
     </dependencies>
     <build>
-        <finalName>demo.user_mgmt</finalName>
+        <finalName>user_mgmt</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
