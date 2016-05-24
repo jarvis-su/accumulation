@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - jarvis_db@192.168.31.100" uuid="4a214bde-753d-4b73-8078-416cedf40826">
+    <database-info product="MySQL" version="5.7.11-log" jdbc-version="4.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.1.24 ( Revision: ${bzr.revision-id} )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="jarvis_db"/>
+    <table name="privileges" schema="" catalog="jarvis_db" type="TABLE">
+      <column name="PRIVILEGE_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="OPERATION" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12" remarks="CQkJCQ=="/>
+      <column name="COMPONENT" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="DESCRIPTION" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12" remarks="CQkJ"/>
+      <column name="EFFECTIVE_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="CQk="/>
+      <column name="EXPIRED_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="STATUS_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="INSERT_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="MOD_DATE" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="PRIVILEGE_ID"/>
+      <foreign-key name="FK_PRI_STATUS_ID" columns="STATUS_ID" ref-table="status" ref-schema="" ref-catalog="jarvis_db" ref-columns="STATUS_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_ROLE_PRIV_ID" table="role_privileges" schema="" catalog="jarvis_db" columns="PRIVILEGE_ID"/>
+      <exported-key name="FK_USER_TYPE_PRIV" table="user_type_privileges" schema="" catalog="jarvis_db" columns="PRILIVEGE_ID"/>
+      <index name="FK_PRI_STATUS_ID_IDX" unique="false" columns="STATUS_ID"/>
+    </table>
+    <table name="response_type" schema="" catalog="jarvis_db" type="TABLE">
+      <column name="RESPONSE_TYPE_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="DESCRIPTION" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="COMPONENT" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="INSERT_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="RESPONSE_TYPE_ID"/>
+      <exported-key name="FK_TRX_HIS_RES_ID" table="user_trx_his" schema="" catalog="jarvis_db" columns="RESPONSE_TYPE_ID"/>
+    </table>
+    <table name="role" schema="" catalog="jarvis_db" type="TABLE">
+      <column name="ROLE_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="ROLE_NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="ROLE_DESCR" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="USER_TYPE_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="STATUS_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="INSERT_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93" remarks="CQk="/>
+      <column name="MOD_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="ROLE_ID"/>
+      <foreign-key name="FK_ROLE_STATUS_ID" columns="STATUS_ID" ref-table="status" ref-schema="" ref-catalog="jarvis_db" ref-columns="STATUS_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_USER_TYPE_ROLE" columns="USER_TYPE_ID" ref-table="user_types" ref-schema="" ref-catalog="jarvis_db" ref-columns="USER_TYPE_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_ROLE_ID_PRIV" table="role_privileges" schema="" catalog="jarvis_db" columns="ROLE_ID"/>
+      <exported-key name="FK_USER_ROLE_ID" table="users" schema="" catalog="jarvis_db" columns="USER_ROLE_ID"/>
+      <index name="FK_ROLE_STATUS_ID_IDX" unique="false" columns="STATUS_ID"/>
+      <index name="FK_USER_TYPE_ROLE_IDX" unique="false" columns="USER_TYPE_ID"/>
+    </table>
+    <table name="role_privileges" schema="" catalog="jarvis_db" type="TABLE">
+      <column name="ROLE_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="PRIVILEGE_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="EFFECTIVE_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="END_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="INSERT_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="MOD_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="ROLE_ID,PRIVILEGE_ID"/>
+      <foreign-key name="FK_ROLE_ID_PRIV" columns="ROLE_ID" ref-table="role" ref-schema="" ref-catalog="jarvis_db" ref-columns="ROLE_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_ROLE_PRIV_ID" columns="PRIVILEGE_ID" ref-table="privileges" ref-schema="" ref-catalog="jarvis_db" ref-columns="PRIVILEGE_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_ROLE_PRIV_ID_IDX" unique="false" columns="PRIVILEGE_ID"/>
+    </table>
+    <table name="schema_version" schema="" catalog="jarvis_db" type="TABLE">
+      <column name="installed_rank" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="version" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="type" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="script" sqlType="VARCHAR" precision="1000" scale="0" nullable="false" jdbcType="12"/>
+      <column name="checksum" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="installed_by" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12"/>
+      <column name="installed_on" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <column name="execution_time" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="success" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6"/>
+      <primary-key name="PRIMARY" columns="installed_rank"/>
+      <index name="SCHEMA_VERSION_s_idx" unique="false" columns="success"/>
+    </table>
+    <table name="status" schema="" catalog="jarvis_db" type="TABLE">
+      <column name="STATUS_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="DESCRIPTION" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="COMPONENT" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="INSERT_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="STATUS_ID"/>
+      <exported-key name="FK_PRI_STATUS_ID" table="privileges" schema="" catalog="jarvis_db" columns="STATUS_ID"/>
+      <exported-key name="FK_ROLE_STATUS_ID" table="role" schema="" catalog="jarvis_db" columns="STATUS_ID"/>
+      <exported-key name="FK_USER_STATUS_ID" table="users" schema="" catalog="jarvis_db" columns="USER_STATUS_ID"/>
+    </table>
+    <table name="transaction_type" schema="" catalog="jarvis_db" type="TABLE">
+      <column name="TRX_TYPE_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="DESCRIPTION" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="COMPONENT" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="INSERT_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="TRX_TYPE_ID"/>
+      <exported-key name="FK_TRX_HIS_TYPE_ID" table="user_trx_his" schema="" catalog="jarvis_db" columns="TRX_TYPE_ID"/>
+    </table>
+    <table name="transaction_users" schema="" catalog="jarvis_db" type="TABLE">
+      <column name="TRX_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="SEQ_ID" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="USER_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="TRX_ID,SEQ_ID"/>
+    </table>
+    <table name="user_trx_his" schema="" catalog="jarvis_db" type="TABLE">
+      <column name="TRX_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="SEQ_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="TRX_TYPE_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="RESPONSE_TYPE_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="TRX_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="USER_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="ENTRY_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="TRX_ID,SEQ_ID"/>
+      <foreign-key name="FK_TRX_HIS_RES_ID" columns="RESPONSE_TYPE_ID" ref-table="response_type" ref-schema="" ref-catalog="jarvis_db" ref-columns="RESPONSE_TYPE_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_TRX_HIS_TYPE_ID" columns="TRX_TYPE_ID" ref-table="transaction_type" ref-schema="" ref-catalog="jarvis_db" ref-columns="TRX_TYPE_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_TRX_HIS_USER_ID" columns="USER_ID" ref-table="users" ref-schema="" ref-catalog="jarvis_db" ref-columns="USER_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_TRX_HIS_USER_ID_IDX" unique="false" columns="USER_ID"/>
+      <index name="FK_TRX_HIS_TYPE_ID_IDX" unique="false" columns="TRX_TYPE_ID"/>
+      <index name="FK_TRX_HIS_RES_ID_IDX" unique="false" columns="RESPONSE_TYPE_ID"/>
+    </table>
+    <table name="user_type_privileges" schema="" catalog="jarvis_db" type="TABLE">
+      <column name="USER_TYPE_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="PRILIVEGE_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="EFFECTIVE_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="END_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="INSERT_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="MOD_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="USER_TYPE_ID,PRILIVEGE_ID"/>
+      <foreign-key name="FK_USER_TYPE_PRIV" columns="PRILIVEGE_ID" ref-table="privileges" ref-schema="" ref-catalog="jarvis_db" ref-columns="PRIVILEGE_ID" update-rule="0" delete-rule="0" deferrability="2"/>
+      <foreign-key name="FK_USER_TYPE_TBL" columns="USER_TYPE_ID" ref-table="user_types" ref-schema="" ref-catalog="jarvis_db" ref-columns="USER_TYPE_ID" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="FK_USER_TYPE_PRIV_IDX" unique="false" columns="PRILIVEGE_ID"/>
+    </table>
+    <table name="user_types" schema="" catalog="jarvis_db" type="TABLE">
+      <column name="USER_TYPE_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="TYPE_NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="TYPE_DESCR" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="INSERT_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="USER_TYPE_ID"/>
+      <exported-key name="FK_USER_TYPE_ROLE" table="role" schema="" catalog="jarvis_db" columns="USER_TYPE_ID"/>
+      <exported-key name="FK_USER_TYPE_TBL" table="user_type_privileges" schema="" catalog="jarvis_db" columns="USER_TYPE_ID"/>
+    </table>
+    <table name="users" schema="" catalog="jarvis_db" type="TABLE">
+      <column name="USER_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="LOGIN_NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="FIRST_NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="LAST_NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="EFFECTIVE_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="PASSWORD" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PASSWORD1" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="PASSWORD2" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="BAD_PWD_CNT" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="USER_STATUS_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="USER_ROLE_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="INSERT_DATE" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="USER_ID"/>
+      <foreign-key name="FK_USER_ROLE_ID" columns="USER_ROLE_ID" ref-table="role" ref-schema="" ref-catalog="jarvis_db" ref-columns="ROLE_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_USER_STATUS_ID" columns="USER_STATUS_ID" ref-table="status" ref-schema="" ref-catalog="jarvis_db" ref-columns="STATUS_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_TRX_HIS_USER_ID" table="user_trx_his" schema="" catalog="jarvis_db" columns="USER_ID"/>
+      <index name="FK_USER_STATUS_ID_IDX" unique="false" columns="USER_STATUS_ID"/>
+      <index name="FK_USER_ROLE_ID_IDX" unique="false" columns="USER_ROLE_ID"/>
+    </table>
+    <table name="v_user_info" schema="" catalog="jarvis_db" type="VIEW">
+      <column name="USER_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="LOGIN_NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ROLE_NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="TYPE_NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+    </table>
+    <table name="v_user_info_1" schema="" catalog="jarvis_db" type="VIEW">
+      <column name="USER_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="LOGIN_NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+      <column name="ROLE_NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="TYPE_NAME" sqlType="VARCHAR" precision="45" scale="0" nullable="true" jdbcType="12"/>
+    </table>
+  </data-source>
+</component>
