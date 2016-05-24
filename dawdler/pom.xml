@@ -10,8 +10,8 @@
 
 	<properties>
 		<core.tools.version>1.0-SNAPSHOT</core.tools.version>
-		<nexus.releases.server>10.237.88.193:8081</nexus.releases.server>
-		<nexus.snapshots.server>10.237.88.193:8081</nexus.snapshots.server>
+		<nexus.releases.server>192.168.31.100:8081</nexus.releases.server>
+		<nexus.snapshots.server>192.168.31.100:8081</nexus.snapshots.server>
 		<build.timestamp>${maven.build.timestamp}</build.timestamp>
 		<spring.version>4.1.2.RELEASE</spring.version>
 		<struts.version>2.3.1.2</struts.version>

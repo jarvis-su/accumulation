@@ -5,7 +5,7 @@
     <artifactId>sys_monitor</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>demo.sys_monitor Maven Webapp</name>
+    <name>sys_monitor Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <properties>
         <core.tools.version>1.0-SNAPSHOT</core.tools.version>

@@ -73,9 +73,17 @@
         <processorPath useClasspath="true" />
         <module name="webApp" />
       </profile>
+      <profile default="false" name="Annotation profile for db-mgmt" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="db-mgmt" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="dawdler" target="1.8" />
+      <module name="db-mgmt" target="1.8" />
       <module name="demo.core_tools" target="1.8" />
       <module name="demo.parent" target="1.8" />
       <module name="demo.sys_monitor" target="1.8" />

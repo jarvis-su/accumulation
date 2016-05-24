@@ -14,8 +14,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<nexus.releases.server>192.168.31.117:8081</nexus.releases.server>
-		<nexus.snapshots.server>192.168.31.117:8081</nexus.snapshots.server>
+		<nexus.releases.server>192.168.31.100:8081</nexus.releases.server>
+		<nexus.snapshots.server>192.168.31.100:8081</nexus.snapshots.server>
 		<mysql.version>5.1.20</mysql.version>
 	</properties>
 
