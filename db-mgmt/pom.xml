@@ -47,20 +47,6 @@
 						<version>${mysql.version}</version>
 					</dependency>
 				</dependencies>
-				<configuration>
-					<driver>com.mysql.jdbc.Driver</driver>
-					<url>jdbc:mysql://192.168.31.100:3306/jarvis_db?characterEncoding=utf8</url>
-					<user>jarvis_db</user>
-					<password>mYsqL$%123</password>
-					<schemas>
-						<schema>jarvis_db</schema>
-					</schemas>
-					<table>SCHEMA_VERSION</table>
-					<baselineVersion>1.0</baselineVersion>
-					<baselineDescription>This is the baseline</baselineDescription>
-					<baselineOnMigrate>true</baselineOnMigrate>
-					<cleanDisabled>false</cleanDisabled>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
