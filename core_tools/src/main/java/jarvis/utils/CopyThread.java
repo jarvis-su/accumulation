@@ -1,11 +1,15 @@
 package jarvis.utils;
 
+import logging.util.CustomLogManager;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * CopyThread
@@ -14,6 +18,7 @@ import java.util.List;
  * @date 1/22/2016
  */
 public class CopyThread extends Thread {
+	private static Logger logger = CustomLogManager.getLogger(CopyThread.class.getName());
 	private static int copiedFiles = 0;
 	private List<File> pool;
 
@@ -33,8 +38,7 @@ public class CopyThread extends Thread {
 					try {
 						pool.wait();
 					} catch (InterruptedException e) {
-						// TODO 自动生成的 catch 块
-						e.printStackTrace();
+						logger.log(Level.FINE," ", e);
 					}
 				}
 				input = pool.remove(pool.size() - 1);
@@ -58,7 +62,7 @@ public class CopyThread extends Thread {
 				}
 				bo.flush();
 			} catch (Exception e) {
-				e.printStackTrace();
+				logger.log(Level.FINE," ", e);
 			} finally {
 				CommonUtils.releaseResource(this, bi);
 				CommonUtils.releaseResource(this, in);
