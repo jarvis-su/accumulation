@@ -25,9 +25,8 @@ public class CommonUtils {
             if (closeable != null) {
                 try {
                     closeable.close();
-                } catch (Throwable th) {
-                    logger.log(Level.FINE,"Throw exception due to ", th);
-                    closeable = null;
+                } catch (Exception e) {
+                    logger.log(Level.FINE,"Throw exception due to ", e);
                 }
             }
         }
@@ -43,8 +42,7 @@ public class CommonUtils {
         while (it.hasNext()) {
             @SuppressWarnings("rawtypes")
 			Map.Entry entry = (Map.Entry) it.next();
-            System.out.print(entry.getKey() + "=");
-            System.out.println(entry.getValue());
+            logger.log(Level.FINEST,entry.getKey() + "=" + entry.getValue());
         }
     }
 }
