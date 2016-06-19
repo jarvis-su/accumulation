@@ -181,3 +181,4 @@ s*
 [INFO] 2016-06-13 22:10:49 jarvis.ReadProperties :pattern.double-byte.characters=[^x00-xff]
 [INFO] 2016-06-13 22:10:49 jarvis.ReadProperties :pattern.nopositive.integer=^-[1-9]d*|0$
 [INFO] 2016-06-13 22:10:49 jarvis.ReadProperties :pattern.url=[a-zA-z]+://[^s]*
+[FINE] 2016-06-19 11:33:54 jarvis.utils.FilesUtils : Exception happened 

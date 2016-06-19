@@ -27,7 +27,7 @@ public class JdbcTemplateTest {
 
 
        // jdbcTemplate.execute("create table abcd(id int , name varchar(20))");
-       List<?> list = jdbcTemplate.queryForList("SELECT * from users ");
+       List<?> list = jdbcTemplate.queryForList("SELECT * from USERS");
 
     }
 }
