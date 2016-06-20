@@ -80,6 +80,13 @@
         <processorPath useClasspath="true" />
         <module name="db-mgmt" />
       </profile>
+      <profile default="false" name="Annotation profile for sonarTest" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="sonarTest" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="dawdler" target="1.8" />
@@ -90,6 +97,7 @@
       <module name="demo.user_mgmt" target="1.8" />
       <module name="distribution" target="1.8" />
       <module name="service" target="1.8" />
+      <module name="sonarTest" target="1.8" />
       <module name="webApp" target="1.8" />
       <module name="webservice_demo" target="1.5" />
     </bytecodeTargetLevel>

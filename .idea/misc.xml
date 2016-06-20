@@ -7,6 +7,7 @@
     <file type="web" url="file://$PROJECT_DIR$/dawdler" />
     <file type="web" url="file://$PROJECT_DIR$/db-mgmt" />
     <file type="web" url="file://$PROJECT_DIR$/service" />
+    <file type="web" url="file://$PROJECT_DIR$/sonarTest" />
     <file type="web" url="file://$PROJECT_DIR$/sys_monitor" />
     <file type="web" url="file://$PROJECT_DIR$/user_mgmt" />
     <file type="web" url="file://$PROJECT_DIR$/webApp" />
@@ -25,6 +26,7 @@
         <option value="$PROJECT_DIR$/webservice_demo/pom.xml" />
         <option value="$PROJECT_DIR$/dawdler/pom.xml" />
         <option value="$PROJECT_DIR$/db-mgmt/pom.xml" />
+        <option value="$PROJECT_DIR$/sonarTest/pom.xml" />
       </list>
     </option>
   </component>
