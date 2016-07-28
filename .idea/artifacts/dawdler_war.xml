@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="dawdler:war">
-    <output-path>$PROJECT_DIR$/dawdler/target</output-path>
-    <root id="archive" name="dawdler.war">
-      <element id="artifact" artifact-name="dawdler:war exploded" />
-    </root>
-  </artifact>
-</component>

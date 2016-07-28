@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.0" sequence="0" timestamp="1469001590838" analysisTimestamp="1469001658988" release="">
+  <Project>
+    <Jar>D:\dev\accumulation\sonarTest\target\classes\sonar\comment\lines\CommentLines.class</Jar>
+    <Jar>D:\dev\accumulation\sonarTest\target\classes\sonar\response\ClassA.class</Jar>
+    <Jar>D:\dev\accumulation\sonarTest\target\classes\sonar\response\ClassB.class</Jar>
+    <AuxClasspathEntry>D:\dev\accumulation\sonarTest\target\classes</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\dev\accumulation\.sonar\accumulation_sonarTest\findbugs\annotations.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\dev\accumulation\.sonar\accumulation_sonarTest\findbugs\jsr305.jar</AuxClasspathEntry>
+    <SrcDir>D:\dev\accumulation\sonarTest\src</SrcDir>
+  </Project>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Wed, 20 Jul 2016 15:59:50 +0800" total_classes="3" referenced_classes="14" total_bugs="0" total_size="35" num_packages="2" java_version="1.8.0_25" vm_version="25.25-b02" cpu_seconds="2.14" clock_seconds="0.67" peak_mbytes="571.24" alloc_mbytes="1803.00" gc_seconds="0.07">
+    <FileStats path="sonar/comment/lines/CommentLines.java" bugCount="0" size="14"/>
+    <FileStats path="sonar/response/ClassA.java" bugCount="0" size="11"/>
+    <FileStats path="sonar/response/ClassB.java" bugCount="0" size="10"/>
+    <PackageStats package="sonar.comment.lines" total_bugs="0" total_types="1" total_size="14">
+      <ClassStats class="sonar.comment.lines.CommentLines" sourceFile="CommentLines.java" interface="false" size="14" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="sonar.response" total_bugs="0" total_types="2" total_size="21">
+      <ClassStats class="sonar.response.ClassA" sourceFile="ClassA.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="sonar.response.ClassB" sourceFile="ClassB.java" interface="false" size="10" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="198" invocations="332" avgMicrosecondsPerInvocation="598" maxMicrosecondsPerInvocation="1386" standardDeviationMircosecondsPerInvocation="290"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="182" invocations="331" avgMicrosecondsPerInvocation="551" maxMicrosecondsPerInvocation="10496" standardDeviationMircosecondsPerInvocation="1026"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="77" invocations="69" avgMicrosecondsPerInvocation="1127" maxMicrosecondsPerInvocation="66929" standardDeviationMircosecondsPerInvocation="7981"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

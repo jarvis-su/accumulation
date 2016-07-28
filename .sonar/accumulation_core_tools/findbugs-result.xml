@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.0" sequence="0" timestamp="1469000349066" analysisTimestamp="1469001642466" release="">
+  <Project>
+    <Jar>D:\dev\accumulation\core_tools\target\classes\jarvis\App.class</Jar>
+    <Jar>D:\dev\accumulation\core_tools\target\classes\jarvis\utils\CommonUtils.class</Jar>
+    <Jar>D:\dev\accumulation\core_tools\target\classes\jarvis\utils\CopyThread.class</Jar>
+    <Jar>D:\dev\accumulation\core_tools\target\classes\jarvis\utils\DateUtils.class</Jar>
+    <Jar>D:\dev\accumulation\core_tools\target\classes\jarvis\utils\DesUtil.class</Jar>
+    <Jar>D:\dev\accumulation\core_tools\target\classes\jarvis\utils\FilesUtils.class</Jar>
+    <Jar>D:\dev\accumulation\core_tools\target\classes\jarvis\utils\FilesUtilsEnhance.class</Jar>
+    <Jar>D:\dev\accumulation\core_tools\target\classes\jarvis\utils\JarvisStringUtils.class</Jar>
+    <Jar>D:\dev\accumulation\core_tools\target\classes\jarvis\utils\mail\EmailHandle.class</Jar>
+    <Jar>D:\dev\accumulation\core_tools\target\classes\jarvis\utils\mail\ReadPropertity.class</Jar>
+    <Jar>D:\dev\accumulation\core_tools\target\classes\jarvis\utils\mail\SendEmail.class</Jar>
+    <Jar>D:\dev\accumulation\core_tools\target\classes\jarvis\utils\other\CallExe.class</Jar>
+    <Jar>D:\dev\accumulation\core_tools\target\classes\logging\formatter\MySimpleFormatter.class</Jar>
+    <Jar>D:\dev\accumulation\core_tools\target\classes\logging\handler\DefaultStreamHandler.class</Jar>
+    <Jar>D:\dev\accumulation\core_tools\target\classes\logging\util\CustomLogManager.class</Jar>
+    <Jar>D:\dev\accumulation\core_tools\target\classes\sep\util\net\ipseeker\FileUtil.class</Jar>
+    <Jar>D:\dev\accumulation\core_tools\target\classes\sep\util\net\ipseeker\Helper.class</Jar>
+    <Jar>D:\dev\accumulation\core_tools\target\classes\sep\util\net\ipseeker\IP4Util.class</Jar>
+    <Jar>D:\dev\accumulation\core_tools\target\classes\sep\util\net\ipseeker\IPLocation.class</Jar>
+    <Jar>D:\dev\accumulation\core_tools\target\classes\sep\util\net\ipseeker\IPSeeker.class</Jar>
+    <Jar>D:\dev\accumulation\core_tools\target\classes\sep\util\net\ipseeker\IPSeekerSimpleCache.class</Jar>
+    <Jar>D:\dev\accumulation\core_tools\target\classes\sep\util\net\ipseeker\IPSeekerTest.class</Jar>
+    <AuxClasspathEntry>D:\dev\accumulation\core_tools\target\classes</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\dev\accumulation\.sonar\accumulation_core_tools\findbugs\annotations.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>D:\dev\accumulation\.sonar\accumulation_core_tools\findbugs\jsr305.jar</AuxClasspathEntry>
+    <SrcDir>D:\dev\accumulation\core_tools\src</SrcDir>
+  </Project>
+  <BugInstance type="OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE" priority="2" rank="20" abbrev="OBL" category="EXPERIMENTAL" instanceHash="62c755b3b24821fddeae3851a90d6063" instanceOccurrenceNum="0" instanceOccurrenceMax="0">
+    <ShortMessage>Method may fail to clean up stream or resource on checked exception</ShortMessage>
+    <LongMessage>jarvis.utils.FilesUtilsEnhance.fileChannelCopy(File, File) may fail to clean up java.io.InputStream on checked exception</LongMessage>
+    <Class classname="jarvis.utils.FilesUtilsEnhance" primary="true">
+      <SourceLine classname="jarvis.utils.FilesUtilsEnhance" start="17" end="48" sourcefile="FilesUtilsEnhance.java" sourcepath="jarvis/utils/FilesUtilsEnhance.java">
+        <Message>At FilesUtilsEnhance.java:[lines 17-48]</Message>
+      </SourceLine>
+      <Message>In class jarvis.utils.FilesUtilsEnhance</Message>
+    </Class>
+    <Method classname="jarvis.utils.FilesUtilsEnhance" name="fileChannelCopy" signature="(Ljava/io/File;Ljava/io/File;)V" isStatic="true" primary="true">
+      <SourceLine classname="jarvis.utils.FilesUtilsEnhance" start="23" end="48" startBytecode="0" endBytecode="592" sourcefile="FilesUtilsEnhance.java" sourcepath="jarvis/utils/FilesUtilsEnhance.java"/>
+      <Message>In method jarvis.utils.FilesUtilsEnhance.fileChannelCopy(File, File)</Message>
+    </Method>
+    <Class classname="java.io.InputStream" role="CLASS_REFTYPE">
+      <SourceLine classname="java.io.InputStream" start="45" end="364" sourcefile="InputStream.java" sourcepath="java/io/InputStream.java">
+        <Message>At InputStream.java:[lines 45-364]</Message>
+      </SourceLine>
+      <Message>Reference type java.io.InputStream</Message>
+    </Class>
+    <Int value="1" role="INT_OBLIGATIONS_REMAINING">
+      <Message>1 instances of obligation remaining</Message>
+    </Int>
+    <SourceLine classname="jarvis.utils.FilesUtilsEnhance" primary="true" start="28" end="28" startBytecode="15" endBytecode="15" sourcefile="FilesUtilsEnhance.java" sourcepath="jarvis/utils/FilesUtilsEnhance.java" role="SOURCE_LINE_OBLIGATION_CREATED">
+      <Message>Obligation to clean up resource created at FilesUtilsEnhance.java:[line 28] is not discharged</Message>
+    </SourceLine>
+    <SourceLine classname="jarvis.utils.FilesUtilsEnhance" start="29" end="29" startBytecode="19" endBytecode="19" sourcefile="FilesUtilsEnhance.java" sourcepath="jarvis/utils/FilesUtilsEnhance.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at FilesUtilsEnhance.java:[line 29]</Message>
+    </SourceLine>
+    <SourceLine classname="jarvis.utils.FilesUtilsEnhance" start="43" end="43" startBytecode="226" endBytecode="226" sourcefile="FilesUtilsEnhance.java" sourcepath="jarvis/utils/FilesUtilsEnhance.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at FilesUtilsEnhance.java:[line 43]</Message>
+    </SourceLine>
+    <SourceLine classname="jarvis.utils.FilesUtilsEnhance" start="44" end="44" startBytecode="228" endBytecode="228" sourcefile="FilesUtilsEnhance.java" sourcepath="jarvis/utils/FilesUtilsEnhance.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at FilesUtilsEnhance.java:[line 44]</Message>
+    </SourceLine>
+    <SourceLine classname="jarvis.utils.FilesUtilsEnhance" start="46" end="46" startBytecode="241" endBytecode="241" sourcefile="FilesUtilsEnhance.java" sourcepath="jarvis/utils/FilesUtilsEnhance.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at FilesUtilsEnhance.java:[line 46]</Message>
+    </SourceLine>
+    <SourceLine classname="jarvis.utils.FilesUtilsEnhance" start="47" end="47" startBytecode="267" endBytecode="267" sourcefile="FilesUtilsEnhance.java" sourcepath="jarvis/utils/FilesUtilsEnhance.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at FilesUtilsEnhance.java:[line 47]</Message>
+    </SourceLine>
+    <SourceLine classname="jarvis.utils.FilesUtilsEnhance" start="48" end="48" startBytecode="301" endBytecode="301" sourcefile="FilesUtilsEnhance.java" sourcepath="jarvis/utils/FilesUtilsEnhance.java" role="SOURCE_LINE_PATH_CONTINUES">
+      <Message>Path continues at FilesUtilsEnhance.java:[line 48]</Message>
+    </SourceLine>
+    <String value="{InputStream x 1}" role="STRING_REMAINING_OBLIGATIONS">
+      <Message>Remaining obligations: {InputStream x 1}</Message>
+    </String>
+  </BugInstance>
+  <BugCategory category="EXPERIMENTAL">
+    <Description>Experimental</Description>
+  </BugCategory>
+  <BugPattern type="OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE" abbrev="OBL" category="EXPERIMENTAL">
+    <ShortDescription>Method may fail to clean up stream or resource on checked exception</ShortDescription>
+    <Details><![CDATA[
+          
+          <p>
+          This method may fail to clean up (close, dispose of) a stream,
+          database object, or other
+          resource requiring an explicit cleanup operation.
+          </p>
+
+          <p>
+          In general, if a method opens a stream or other resource,
+          the method should use a try/finally block to ensure that
+          the stream or resource is cleaned up before the method
+          returns.
+          </p>
+
+          <p>
+          This bug pattern is essentially the same as the
+          OS_OPEN_STREAM and ODR_OPEN_DATABASE_RESOURCE
+          bug patterns, but is based on a different
+          (and hopefully better) static analysis technique.
+          We are interested is getting feedback about the
+          usefulness of this bug pattern.
+          To send feedback, either:
+          </p>
+          <ul>
+            <li>send email to findbugs@cs.umd.edu</li>
+            <li>file a bug report: <a href="http://findbugs.sourceforge.net/reportingBugs.html">http://findbugs.sourceforge.net/reportingBugs.html</a></li>
+          </ul>
+
+          <p>
+          In particular,
+          the false-positive suppression heuristics for this
+          bug pattern have not been extensively tuned, so
+          reports about false positives are helpful to us.
+          </p>
+
+          <p>
+          See Weimer and Necula, <i>Finding and Preventing Run-Time Error Handling Mistakes</i>, for
+          a description of the analysis technique.
+          </p>
+          
+      ]]></Details>
+  </BugPattern>
+  <BugCode abbrev="OBL">
+    <Description>Unsatisfied obligation to clean up stream or resource</Description>
+  </BugCode>
+  <Errors errors="0" missingClasses="17">
+    <MissingClass>javax.mail.BodyPart</MissingClass>
+    <MissingClass>javax.mail.Message$RecipientType</MissingClass>
+    <MissingClass>javax.mail.Multipart</MissingClass>
+    <MissingClass>javax.mail.Session</MissingClass>
+    <MissingClass>javax.mail.Transport</MissingClass>
+    <MissingClass>javax.mail.internet.InternetAddress</MissingClass>
+    <MissingClass>javax.mail.internet.MimeBodyPart</MissingClass>
+    <MissingClass>javax.mail.internet.MimeMessage</MissingClass>
+    <MissingClass>javax.mail.internet.MimeMultipart</MissingClass>
+    <MissingClass>javax.mail.internet.MimeUtility</MissingClass>
+    <MissingClass>org.apache.commons.codec.digest.DigestUtils</MissingClass>
+    <MissingClass>org.apache.commons.lang.StringUtils</MissingClass>
+    <MissingClass>org.apache.commons.lang3.time.DateUtils</MissingClass>
+    <MissingClass>org.hamcrest.CoreMatchers</MissingClass>
+    <MissingClass>org.junit.Assert</MissingClass>
+    <MissingClass>org.slf4j.Logger</MissingClass>
+    <MissingClass>org.slf4j.LoggerFactory</MissingClass>
+  </Errors>
+  <FindBugsSummary timestamp="Wed, 20 Jul 2016 15:39:09 +0800" total_classes="22" referenced_classes="149" total_bugs="1" total_size="892" num_packages="8" java_version="1.8.0_25" vm_version="25.25-b02" cpu_seconds="12.39" clock_seconds="3.67" peak_mbytes="562.50" alloc_mbytes="1803.00" gc_seconds="0.08" priority_2="1">
+    <FileStats path="jarvis/App.java" bugCount="0" size="6"/>
+    <FileStats path="jarvis/utils/CommonUtils.java" bugCount="0" size="26"/>
+    <FileStats path="jarvis/utils/CopyThread.java" bugCount="0" size="51"/>
+    <FileStats path="jarvis/utils/DateUtils.java" bugCount="0" size="202"/>
+    <FileStats path="jarvis/utils/DesUtil.java" bugCount="0" size="39"/>
+    <FileStats path="jarvis/utils/FilesUtils.java" bugCount="0" size="96"/>
+    <FileStats path="jarvis/utils/FilesUtilsEnhance.java" bugCount="1" size="29" bugHash="36415b52f79a168a442fe2f61097e014"/>
+    <FileStats path="jarvis/utils/JarvisStringUtils.java" bugCount="0" size="16"/>
+    <FileStats path="jarvis/utils/mail/EmailHandle.java" bugCount="0" size="126"/>
+    <FileStats path="jarvis/utils/mail/ReadPropertity.java" bugCount="0" size="14"/>
+    <FileStats path="jarvis/utils/mail/SendEmail.java" bugCount="0" size="28"/>
+    <FileStats path="jarvis/utils/other/CallExe.java" bugCount="0" size="14"/>
+    <FileStats path="logging/formatter/MySimpleFormatter.java" bugCount="0" size="18"/>
+    <FileStats path="logging/handler/DefaultStreamHandler.java" bugCount="0" size="6"/>
+    <FileStats path="logging/util/CustomLogManager.java" bugCount="0" size="37"/>
+    <FileStats path="sep/util/net/ipseeker/FileUtil.java" bugCount="0" size="10"/>
+    <FileStats path="sep/util/net/ipseeker/Helper.java" bugCount="0" size="75"/>
+    <FileStats path="sep/util/net/ipseeker/IP4Util.java" bugCount="0" size="6"/>
+    <FileStats path="sep/util/net/ipseeker/IPLocation.java" bugCount="0" size="48"/>
+    <FileStats path="sep/util/net/ipseeker/IPSeeker.java" bugCount="0" size="23"/>
+    <FileStats path="sep/util/net/ipseeker/IPSeekerSimpleCache.java" bugCount="0" size="11"/>
+    <FileStats path="sep/util/net/ipseeker/IPSeekerTest.java" bugCount="0" size="11"/>
+    <PackageStats package="jarvis" total_bugs="0" total_types="1" total_size="6">
+      <ClassStats class="jarvis.App" sourceFile="App.java" interface="false" size="6" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="jarvis.utils" total_bugs="1" total_types="7" total_size="459" priority_2="1">
+      <ClassStats class="jarvis.utils.CommonUtils" sourceFile="CommonUtils.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="jarvis.utils.CopyThread" sourceFile="CopyThread.java" interface="false" size="51" bugs="0"/>
+      <ClassStats class="jarvis.utils.DateUtils" sourceFile="DateUtils.java" interface="false" size="202" bugs="0"/>
+      <ClassStats class="jarvis.utils.DesUtil" sourceFile="DesUtil.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="jarvis.utils.FilesUtils" sourceFile="FilesUtils.java" interface="false" size="96" bugs="0"/>
+      <ClassStats class="jarvis.utils.FilesUtilsEnhance" sourceFile="FilesUtilsEnhance.java" interface="false" size="29" bugs="1" priority_2="1"/>
+      <ClassStats class="jarvis.utils.JarvisStringUtils" sourceFile="JarvisStringUtils.java" interface="false" size="16" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="jarvis.utils.mail" total_bugs="0" total_types="3" total_size="168">
+      <ClassStats class="jarvis.utils.mail.EmailHandle" sourceFile="EmailHandle.java" interface="false" size="126" bugs="0"/>
+      <ClassStats class="jarvis.utils.mail.ReadPropertity" sourceFile="ReadPropertity.java" interface="false" size="14" bugs="0"/>
+      <ClassStats class="jarvis.utils.mail.SendEmail" sourceFile="SendEmail.java" interface="false" size="28" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="jarvis.utils.other" total_bugs="0" total_types="1" total_size="14">
+      <ClassStats class="jarvis.utils.other.CallExe" sourceFile="CallExe.java" interface="false" size="14" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="logging.formatter" total_bugs="0" total_types="1" total_size="18">
+      <ClassStats class="logging.formatter.MySimpleFormatter" sourceFile="MySimpleFormatter.java" interface="false" size="18" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="logging.handler" total_bugs="0" total_types="1" total_size="6">
+      <ClassStats class="logging.handler.DefaultStreamHandler" sourceFile="DefaultStreamHandler.java" interface="false" size="6" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="logging.util" total_bugs="0" total_types="1" total_size="37">
+      <ClassStats class="logging.util.CustomLogManager" sourceFile="CustomLogManager.java" interface="false" size="37" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="sep.util.net.ipseeker" total_bugs="0" total_types="7" total_size="184">
+      <ClassStats class="sep.util.net.ipseeker.FileUtil" sourceFile="FileUtil.java" interface="false" size="10" bugs="0"/>
+      <ClassStats class="sep.util.net.ipseeker.Helper" sourceFile="Helper.java" interface="false" size="75" bugs="0"/>
+      <ClassStats class="sep.util.net.ipseeker.IP4Util" sourceFile="IP4Util.java" interface="false" size="6" bugs="0"/>
+      <ClassStats class="sep.util.net.ipseeker.IPLocation" sourceFile="IPLocation.java" interface="false" size="48" bugs="0"/>
+      <ClassStats class="sep.util.net.ipseeker.IPSeeker" sourceFile="IPSeeker.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="sep.util.net.ipseeker.IPSeekerSimpleCache" sourceFile="IPSeekerSimpleCache.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="sep.util.net.ipseeker.IPSeekerTest" sourceFile="IPSeekerTest.java" interface="false" size="11" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="590" invocations="963" avgMicrosecondsPerInvocation="612" maxMicrosecondsPerInvocation="2977" standardDeviationMircosecondsPerInvocation="343"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="417" invocations="958" avgMicrosecondsPerInvocation="436" maxMicrosecondsPerInvocation="19651" standardDeviationMircosecondsPerInvocation="1093"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="207" invocations="149" avgMicrosecondsPerInvocation="1389" maxMicrosecondsPerInvocation="15177" standardDeviationMircosecondsPerInvocation="2445"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="175" invocations="133" avgMicrosecondsPerInvocation="1318" maxMicrosecondsPerInvocation="78019" standardDeviationMircosecondsPerInvocation="6793"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="169" invocations="533" avgMicrosecondsPerInvocation="317" maxMicrosecondsPerInvocation="3957" standardDeviationMircosecondsPerInvocation="443"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="95" invocations="145" avgMicrosecondsPerInvocation="655" maxMicrosecondsPerInvocation="13366" standardDeviationMircosecondsPerInvocation="1364"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="92" invocations="142" avgMicrosecondsPerInvocation="654" maxMicrosecondsPerInvocation="9878" standardDeviationMircosecondsPerInvocation="1195"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="76" invocations="133" avgMicrosecondsPerInvocation="578" maxMicrosecondsPerInvocation="6124" standardDeviationMircosecondsPerInvocation="796"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="72" invocations="133" avgMicrosecondsPerInvocation="548" maxMicrosecondsPerInvocation="12103" standardDeviationMircosecondsPerInvocation="1161"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="70" invocations="133" avgMicrosecondsPerInvocation="531" maxMicrosecondsPerInvocation="5616" standardDeviationMircosecondsPerInvocation="744"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="61" invocations="133" avgMicrosecondsPerInvocation="460" maxMicrosecondsPerInvocation="38981" standardDeviationMircosecondsPerInvocation="3363"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="57" invocations="149" avgMicrosecondsPerInvocation="383" maxMicrosecondsPerInvocation="7511" standardDeviationMircosecondsPerInvocation="784"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="56" invocations="122" avgMicrosecondsPerInvocation="465" maxMicrosecondsPerInvocation="10508" standardDeviationMircosecondsPerInvocation="1215"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="56" invocations="894" avgMicrosecondsPerInvocation="62" maxMicrosecondsPerInvocation="2044" standardDeviationMircosecondsPerInvocation="129"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="52" invocations="191" avgMicrosecondsPerInvocation="276" maxMicrosecondsPerInvocation="19809" standardDeviationMircosecondsPerInvocation="1461"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="49" invocations="149" avgMicrosecondsPerInvocation="333" maxMicrosecondsPerInvocation="10118" standardDeviationMircosecondsPerInvocation="984"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="42" invocations="149" avgMicrosecondsPerInvocation="283" maxMicrosecondsPerInvocation="2943" standardDeviationMircosecondsPerInvocation="458"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="38" invocations="149" avgMicrosecondsPerInvocation="259" maxMicrosecondsPerInvocation="10193" standardDeviationMircosecondsPerInvocation="863"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="38" invocations="149" avgMicrosecondsPerInvocation="257" maxMicrosecondsPerInvocation="5204" standardDeviationMircosecondsPerInvocation="547"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

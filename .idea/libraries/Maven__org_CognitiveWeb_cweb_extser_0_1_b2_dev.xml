@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.CognitiveWeb:cweb-extser:0.1-b2-dev">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/CognitiveWeb/cweb-extser/0.1-b2-dev/cweb-extser-0.1-b2-dev.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/CognitiveWeb/cweb-extser/0.1-b2-dev/cweb-extser-0.1-b2-dev-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/CognitiveWeb/cweb-extser/0.1-b2-dev/cweb-extser-0.1-b2-dev-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
