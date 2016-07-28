@@ -15,6 +15,7 @@
 		<build.timestamp>${maven.build.timestamp}</build.timestamp>
 		<spring.version>4.1.2.RELEASE</spring.version>
 		<struts.version>2.3.1.2</struts.version>
+		<EPPIC.core.version>2.0-SNAPSHOT</EPPIC.core.version>
 	</properties>
 
 	<distributionManagement>
@@ -68,9 +69,26 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>com.xerox.eppic.ecc.core</groupId>
+			<artifactId>ecc-db-gen</artifactId>
+			<version>${EPPIC.core.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.xerox.eppic.ecc.core</groupId>
+			<artifactId>ecc-biz</artifactId>
+			<version>${EPPIC.core.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.xerox.eppic.ecc</groupId>
+			<artifactId>eccla-db-gen</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
 	</dependencies>
 	<build>
-		<finalName>dawdler</finalName>
+		<finalName>sonarTest</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
@@ -78,7 +96,7 @@
 				<version>2.2</version>
 				<configuration>
 					<port>9090</port>
-					<path>/dawdler</path>
+					<path>/sonarTest</path>
 					<uriEncoding>UTF-8</uriEncoding>
 					<server>tomcat7</server>
 				</configuration>
