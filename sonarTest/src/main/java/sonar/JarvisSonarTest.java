@@ -1,54 +1,11 @@
 package sonar;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.acs.ecc.bs.EccTrxCmd;
-import com.tps.eppic.EppicExceptions;
-
-public class JarvisSonarTest extends EccTrxCmd {
+public class JarvisSonarTest {
 
     List<String> testList = new ArrayList<>();
-
-    @Override
-    protected void initAccount() throws EppicExceptions, SQLException {
-    }
-
-    @Override
-    protected void executeHelper() throws EppicExceptions, SQLException {
-        jarvisTest();
-        testRemoveAll();
-    }
-
-    private int jarvisTest() {
-        PreparedStatement prepStmt = null;
-        ResultSet rs = null;
-        try {
-            prepStmt = _conn.prepareStatement("select 1 from dual", ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_READ_ONLY);
-            rs = prepStmt.executeQuery();
-            if (rs.next()) {
-                return rs.getInt(1);
-            }
-
-            return 0;
-
-        } catch (SQLException ee) {
-            return 0;
-        } finally {
-            // EccUtil.releaseDBResource(this, prepStmt);
-            ResourceUtil.releaseResource(rs, prepStmt);
-        }
-
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        return false;
-    }
 
     private void testRemoveAll() {
         testList.removeAll(testList);
