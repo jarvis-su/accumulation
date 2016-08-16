@@ -47,4 +47,23 @@ dependencies {
        This behavior is not yet supported by Gradle, so this dependency has been converted to a compile dependency.
        Please review and delete this closure when resolved. */
     }
+
+
+    task helloWorld << {
+            println 'Hello World !'
+    }
+
+    task startSession << {
+        ant.echo(message: 'Repeat after me ...')
+    }
+
+   3.times {
+        task "yayGardle$it" << {
+            println 'Grandle rocks'
+        }
+    }
+
+    yayGardle0.dependsOn startSession
+    yayGardle2.dependsOn yayGardle1, yayGardle0
+    task groupTherapy(dependsOn: yayGardle2)
 }
