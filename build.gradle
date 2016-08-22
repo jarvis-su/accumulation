@@ -1,6 +1,6 @@
 apply plugin: "java"
 apply plugin: "idea"
-apply plugin: "eclipse"
+// apply plugin: "eclipse"
 apply plugin: "maven"
 apply plugin: "war"
 group = 'jarvis'
@@ -8,6 +8,7 @@ version = '1.0-SNAPSHOT'
 description = "jarvis tools project"
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+
 repositories {
     mavenLocal()
     mavenCentral()
@@ -16,3 +17,9 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
+
+task showTasks {
+    println tasks.class
+    println tasks.size()
+}
+
