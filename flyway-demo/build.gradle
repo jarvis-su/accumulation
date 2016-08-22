@@ -1,0 +1,22 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.jarvis.app'
+version = '1.0-SNAPSHOT'
+
+description = """flyway-demo Maven Webapp"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+
+repositories {
+        
+     maven { url "http://nexus-releases" }
+     maven { url "http://nexus-snapshots" }
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    testCompile group: 'junit', name: 'junit', version:'3.8.1'
+}
