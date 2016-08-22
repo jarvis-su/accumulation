@@ -1,10 +1,8 @@
 apply plugin: 'java'
 apply plugin: 'maven'
+apply plugin: 'idea'
 
 group = 'jarvis'
-version = '1.0-SNAPSHOT'
-
-description = """core_tools"""
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -27,17 +25,17 @@ dependencies {
     compile group: 'com.sun.jersey', name: 'jersey-client', version:'1.3'
     compile group: 'com.sun.jersey', name: 'jersey-servlet', version:'1.17.1'
     compile group: 'com.sun.jersey', name: 'jersey-json', version:'1.17.1'
-    compile group: 'org.springframework', name: 'spring-core', version:'3.2.2.RELEASE'
-    compile group: 'mysql', name: 'mysql-connector-java', version:'5.1.20'
+    compile group: 'org.springframework', name: 'spring-core', version: "$springVersion"
+    compile group: 'mysql', name: 'mysql-connector-java', version:"$mysqlVersion"
     compile group: 'org.jmesa', name: 'jmesa', version:'3.0.4'
     compile group: 'axis2', name: 'axis2', version:'1.0'
     compile group: 'jaxb', name: 'activation', version:'1.0.2'
     compile group: 'com.sun.commons', name: 'beanutils', version:'1.6.1-20070314'
     compile group: 'com.sun.commons', name: 'collections', version:'2.1'
     compile group: 'org.springframework.security', name: 'spring-security-parent', version:'3.0.8.RELEASE'
-    compile group: 'org.springframework', name: 'spring-jdbc', version:'3.2.2.RELEASE'
-    compile group: 'org.springframework', name: 'spring-web', version:'3.2.2.RELEASE'
-    compile group: 'org.springframework', name: 'spring-aop', version:'3.2.2.RELEASE'
+    compile group: 'org.springframework', name: 'spring-jdbc', version:"$springVersion"
+    compile group: 'org.springframework', name: 'spring-web', version:"$springVersion"
+    compile group: 'org.springframework', name: 'spring-aop', version:"$springVersion"
     compile group: 'mx4j', name: 'mx4j', version:'3.0.2'
     compile group: 'commons-codec', name: 'commons-codec', version:'1.9'
     compile group: 'jdom', name: 'jdom', version:'1.0'
@@ -60,6 +58,10 @@ dependencies {
         ant.echo(message: 'Repeat after me ...')
     }
 
+    task printGradleProperty << {
+        println "mysql version is : $mysqlVersion"
+    }
+
    3.times {
         task "yayGardle$it" << {
             println 'Grandle rocks'
@@ -69,4 +71,15 @@ dependencies {
     yayGardle0.dependsOn startSession
     yayGardle2.dependsOn yayGardle1, yayGardle0
     task groupTherapy(dependsOn: yayGardle2)
+
+    task printVersion {
+        doFirst {
+            println "Before reading the project version"
+        }
+        doLast {
+            println "Version: $version"
+        }
+    }
+    printVersion.doFirst { println "First action" }
+    printVersion << { println "Last action" }
 }
