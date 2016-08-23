@@ -35,7 +35,7 @@ public class PlainTextPasswordValidator implements PasswordValidationCallback.Pa
         if (user != null) {
             logger.info("User " + user.getLoginName() + " Authenticated");
         }
-        return (user != null) ? true : false;
+        return (user != null);
     }
 
 

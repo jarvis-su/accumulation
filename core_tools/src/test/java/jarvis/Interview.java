@@ -104,9 +104,9 @@ public class Interview {
         }
 
         public static void main(String[] args) {
-            ((Null) null).hello();
-            Null _null = (Null) null;
-            _null.hello();
+            hello();
+            Null _null = null;
+            hello();
         }
     }
 

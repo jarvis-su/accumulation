@@ -5,5 +5,5 @@ package com.jarvis.supporter;
  */
 public interface UserMgmtContext {
 
-    public final static LookupValues lookupValues = BusinessServerManager.getSoleInstance().getLookupValues();
+    LookupValues lookupValues = BusinessServerManager.getSoleInstance().getLookupValues();
 }

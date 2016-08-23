@@ -29,7 +29,7 @@ public class CopyThread extends Thread {
                         e.printStackTrace();
                     }
                 }
-                input = (File) pool.remove(pool.size() - 1);
+                input = pool.remove(pool.size() - 1);
                 copiedFilesIncrement();
             }
             // 文件复制

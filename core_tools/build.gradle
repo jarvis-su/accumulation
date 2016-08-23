@@ -82,4 +82,9 @@ dependencies {
     }
     printVersion.doFirst { println "First action" }
     printVersion << { println "Last action" }
+
+    task showTasks {
+        println tasks.class
+        println tasks.size()
+    }
 }

@@ -10,16 +10,16 @@ import com.jarvis.users.User;
  */
 public interface IUserManager extends UserMgmtContext {
 
-    public User login(String userName, String password) throws UserManagerException;
+    User login(String userName, String password) throws UserManagerException;
 
-    public void validatePassword(User user, String password) throws UserManagerException;
+    void validatePassword(User user, String password) throws UserManagerException;
 
-    public boolean isUserEnable(User user) throws UserManagerException;
+    boolean isUserEnable(User user) throws UserManagerException;
 
-    public void updateUsers(User user) throws UserManagerException;
+    void updateUsers(User user) throws UserManagerException;
 
-    public void changePassword(User user, String newPassword) throws UserManagerException;
+    void changePassword(User user, String newPassword) throws UserManagerException;
 
-    public String encryptPassword(String password) throws UserManagerException;
+    String encryptPassword(String password) throws UserManagerException;
 
 }

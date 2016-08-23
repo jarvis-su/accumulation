@@ -28,22 +28,18 @@ public class ParameterizedTest {
 
     @Parameters
     public static Collection<?> contructData() {
-        return Arrays.asList(new Object[][]{
-                {"aaa", "AAA"},
+        return Arrays.asList({"aaa", "AAA"},
                 {null, null},
                 {"", ""},
-                {"BBB", "BBB"}
-        });
+                {"BBB", "BBB"});
     }
 
     @Parameterized.Parameters
     public static Collection<?> contructData1() {
-        return Arrays.asList(new Object[][]{
-                {"aaa1", "AAA1"},
+        return Arrays.asList({"aaa1", "AAA1"},
                 {null, null},
                 {"", ""},
-                {"BBB1", "BBB1"}
-        });
+                {"BBB1", "BBB1"});
     }
 
     public String toUpperCase(String str) {

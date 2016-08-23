@@ -11,5 +11,5 @@ import javax.jws.soap.SOAPBinding;
 @SOAPBinding(style = SOAPBinding.Style.DOCUMENT)
 public interface IUserService {
     @WebMethod
-    public String sayHello();
+    String sayHello();
 }

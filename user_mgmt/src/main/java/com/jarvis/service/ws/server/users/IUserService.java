@@ -12,5 +12,5 @@ import javax.jws.soap.SOAPBinding;
 public interface IUserService {
 
     @WebMethod
-    public String login(String userName, String password);
+    String login(String userName, String password);
 }
