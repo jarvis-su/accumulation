@@ -37,6 +37,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="demo.core_tools" />
+    <orderEntry type="module" module-name="core_tools" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.12" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.0" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
@@ -320,5 +321,9 @@
         <entry key="STYLE" value="true" />
       </map>
     </option>
+  </component>
+  <component name="sonarModuleSettings">
+    <option name="localAnalysisScripName" value="&lt;PROJECT&gt;" />
+    <option name="serverName" value="&lt;PROJECT&gt;" />
   </component>
 </module>

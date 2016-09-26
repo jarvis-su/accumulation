@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/accumulation.iml" filepath="$PROJECT_DIR$/.idea/accumulation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/accumulation.iml" filepath="$PROJECT_DIR$/.idea/modules/accumulation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/accumulation_main.iml" filepath="$PROJECT_DIR$/.idea/modules/accumulation_main.iml" group="accumulation" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/accumulation_test.iml" filepath="$PROJECT_DIR$/.idea/modules/accumulation_test.iml" group="accumulation" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core_tools.iml" filepath="$PROJECT_DIR$/.idea/modules/core_tools.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core_tools_main.iml" filepath="$PROJECT_DIR$/.idea/modules/core_tools_main.iml" group="core_tools" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core_tools_test.iml" filepath="$PROJECT_DIR$/.idea/modules/core_tools_test.iml" group="core_tools" />
       <module fileurl="file://$PROJECT_DIR$/dawdler/dawdler.iml" filepath="$PROJECT_DIR$/dawdler/dawdler.iml" />
       <module fileurl="file://$PROJECT_DIR$/db-mgmt/db-mgmt.iml" filepath="$PROJECT_DIR$/db-mgmt/db-mgmt.iml" />
       <module fileurl="file://$PROJECT_DIR$/core_tools/demo.core_tools.iml" filepath="$PROJECT_DIR$/core_tools/demo.core_tools.iml" />

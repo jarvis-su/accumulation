@@ -22,6 +22,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="core_tools" />
         <module name="dawdler" />
         <module name="db-mgmt" />
         <module name="demo.core_tools" />
@@ -35,6 +36,11 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="accumulation_main" target="1.8" />
+      <module name="accumulation_test" target="1.8" />
+      <module name="core_tools" target="1.8" />
+      <module name="core_tools_main" target="1.8" />
+      <module name="core_tools_test" target="1.8" />
       <module name="dawdler" target="1.8" />
       <module name="db-mgmt" target="1.8" />
       <module name="demo.core_tools" target="1.8" />
