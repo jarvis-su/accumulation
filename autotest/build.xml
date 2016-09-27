@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<project name="autotest" default="clean" basedir=".">
+	<property name="src.main" value="src/main" />
+	<property name="dest.main" value="src/bin/main" />
+	<property name="src.test" value="src/test" />
+	<property name="dest.test" value="src/bin/test" />
+	<property name="dest" value="src/bin" />
+	<target name="init">
+		<mkdir dir="${dest.main}" />
+		<mkdir dir="${dest.test}" />
+	</target>
+	<target name="compile" depends="init">
+		<javac srcdir="${src.main}" destdir="${dest.main}">
+		</javac>
+		<javac srcdir="${src.test}" destdir="${dest.test}">
+			<classpath>
+				<pathelement path="lib/junit.jar" />
+				<pathelement path="${dest.main}"/>
+			</classpath>
+		</javac>
+	</target>
+	<target name="run" depends="compile">
+		<junit printsummary="true">
+			<classpath>
+				<pathelement path="lib/junit.jar" />
+				<pathelement path="${dest.main}" />
+				<pathelement path="${dest.test}" />
+			</classpath>
+			<batchtest fork="true">
+				<fileset dir="${dest.test}">
+				</fileset>
+			</batchtest>
+		</junit>
+	</target>
+	<target name="clean" depends="run">
+		<delete dir="${dest}">
+		</delete>
+	</target>
+</project>

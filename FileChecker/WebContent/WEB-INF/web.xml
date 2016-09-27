@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID" version="2.4">
+<display-name>FileChecker</display-name>
+	<servlet>
+		<description></description>
+		<display-name>FileChecker</display-name>
+		<servlet-name>FileChecker</servlet-name>
+		<servlet-class>com.acs.fileChecker.web.FileCheckerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FileChecker</servlet-name>
+		<url-pattern>/FileChecker</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<description></description>
+		<display-name>FileCheckerConfig</display-name>
+		<servlet-name>FileCheckerConfig</servlet-name>
+		<servlet-class>com.acs.fileChecker.web.FileCheckerConfigServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FileCheckerConfig</servlet-name>
+		<url-pattern>/FileCheckerConfig</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<description></description>
+		<display-name>ConfigStateManagment</display-name>
+		<servlet-name>ConfigStateManagment</servlet-name>
+		<servlet-class>com.acs.fileChecker.web.ConfigStateManagmentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ConfigStateManagment</servlet-name>
+		<url-pattern>/ConfigStateManagment</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<description></description>
+		<display-name>ConfigFileManagment</display-name>
+		<servlet-name>ConfigFileManagment</servlet-name>
+		<servlet-class>com.acs.fileChecker.web.ConfigFileManagmentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ConfigFileManagment</servlet-name>
+		<url-pattern>/ConfigFileManagment</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

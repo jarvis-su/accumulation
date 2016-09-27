@@ -1,0 +1,72 @@
+td {
+	text-align: left;
+	vertical-align: top;
+	font-family:Tahoma;
+	font-size:11px;
+	color: #E5E5E5;
+}
+
+a {
+	text-decoration: underline;
+	font-size: 18;
+	color:#6B70BD;
+}
+
+A:Hover  {
+	color : #9EA3DE;
+	text-decoration : underline;
+}
+
+A:Visited {
+	color: #9EA3DE;
+}
+
+H1 {
+	color: #0D128E;
+	font-size: 48px;
+
+	font-weight: bold;
+}
+
+H3 {
+	color: #5D62EE;
+	font-weight: bold;
+	font-size : 20px;
+	font-family:Tahoma;
+}
+
+table.sidePanel {
+	width: 207;
+}
+
+table.sidePanel td {
+	width: 207;
+	height: 28;
+	vertical-align: middle;
+	text-align: center;
+}
+
+del {
+	color: #E5E5E5;
+	font: bold 18px Tahoma, sans-serif;
+}
+
+table.sidePanel a {
+	color: #0D126E;
+        font: bold 18px Tahoma, sans-serif;
+	text-decoration: none;
+}
+
+table.sidePanel a:Visited {
+	color: #0D126E;
+        font: bold 18px Tahoma, sans-serif;
+	text-decoration: none;
+}
+
+table.sidePanel H3 {
+	text-align: left;
+	color: #5D62EE;
+	font-weight: bold;
+	font-size : 20px;
+	font-family:Tahoma;
+}

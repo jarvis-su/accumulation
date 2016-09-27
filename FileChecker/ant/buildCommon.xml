@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="FileChecker" default="buildCommon" basedir="../">
+
+	<property name="version" value="14.0.1" />
+
+	<property name="config" value="${basedir}/config" />
+	<property name="config.common" value="${config}/common" />
+	<property name="config.server" value="${config}/server" />
+	<property name="config.agent" value="${config}/agent" />
+
+	<property name="src" value="${basedir}/src" />
+	<property name="src.server" value="${src}/server" />
+	<property name="src.agent" value="${src}/agent" />
+	<property name="src.common" value="${src}/common" />
+
+	<property name="target" value="${basedir}/target" />
+	<property name="target.classes" value="${target}/classes" />
+	<property name="target.classes.common" value="${target.classes}/common" />
+	<property name="target.classes.server" value="${target.classes}/server" />
+	<property name="target.classes.agent" value="${target.classes}/agent" />
+	<property name="target.common.jar" value="${target}/filechecker-common.jar" />
+
+	<property name="web.root" value="${basedir}/WebContent" />
+	<property name="web.lib" value="${web.root}/WEB-INF/lib" />
+
+	<property name="lib.tomcat" value="${basedir}/lib/tomcat" />
+
+	<property name="release" value="${basedir}/release" />
+
+	<!--set CLASSPACH-->
+	<path id="classpath">
+		<pathelement location="${src.common}" />
+		<pathelement location="${src.server}" />
+		<pathelement location="${src.agent}" />
+		<fileset dir="${web.lib}" includes="***.jar" />
+		<fileset dir="${lib.tomcat}" includes="***.jar" />
+	</path>
+
+	<!--1 delete target folder-->
+	<target name="cleanCommon" description="delete directory">
+		<echo message="clean common target directory" />
+		<delete dir="${target.classes.common}" />
+	</target>
+
+	<!--2 create target directory -->
+	<target name="initCommon" description="create target directory" depends="cleanCommon">
+		<echo message="create common target directory" />
+		<mkdir dir="${target}" />
+		<mkdir dir="${target.classes}" />
+		<mkdir dir="${target.classes.common}" />
+	</target>
+
+	<!--3 compile source files -->
+	<target name="compileCommon" description="compile source files" depends="initCommon">
+		<echo message="compile Common source files" />
+		<javac srcdir="${src.common}" destdir="${target.classes.common}">
+			<classpath refid="classpath" />
+		</javac>
+	</target>
+
+	<!--4 copy resources to classes path -->
+	<target name="copyResCommon" depends="compileCommon" description="copy resources to classes path">
+		<echo message="copy common resources to classes path" />
+		<copy todir="${target.classes.common}">
+			<fileset dir="${config}/common" />
+		</copy>
+	</target>
+
+	<!--5 generate common jar -->
+	<target name="buildCommon" depends="copyResCommon">
+		<echo message="build common jar" />
+		<jar destfile="${target.common.jar}" basedir="${target.classes.common}">
+			<include name="**/*" />
+
+			<manifest>
+				<attribute name="version" value="FileChecker Common JAR - V${version}" />
+			</manifest>
+		</jar>
+	</target>
+</project>

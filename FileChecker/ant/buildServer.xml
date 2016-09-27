@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="FileCheckerServer" default="generServerWar" basedir="../">
+
+	<import file="buildCommon.xml" />
+	<property name="target.server.war" value="${target}/FileChecker.war" />
+	<!--1 delete server target folder-->
+	<target name="cleanServer" description="delete directory" >
+		<echo message="clean server target directory" />
+		<delete dir="${target.classes.server}" />
+	</target>
+
+	<!--2 create sever target directory -->
+	<target name="initServer" description="create target directory" depends="cleanServer">
+		<echo message="create server target directory" />
+		<mkdir dir="${target}" />
+		<mkdir dir="${target.classes}" />
+		<mkdir dir="${target.classes.server}" />
+	</target>
+
+	<!--3 compile server source files -->
+	<target name="compileServer" description="compile source files" depends="initServer">
+		<echo message="compile Server source files" />
+		<javac srcdir="${src.server}" destdir="${target.classes.server}">
+			<classpath refid="classpath" />
+			<classpath path="${target.common.jar}" />
+		</javac>
+	</target>
+
+	<!--4 copy server resources to classes path -->
+	<target name="copyResServer" depends="compileServer" description="copy resources to classes path">
+		<echo message="copy server resources to classes path" />
+		<copy todir="${target.classes.server}">
+			<fileset dir="${config}/server" />
+		</copy>
+	</target>
+
+	<!--5 generate server war -->
+	<target name="generServerWar" depends="copyResServer">
+		<echo message="generate war" />
+		<war destfile="${target.server.war}" webxml="${web.root}/WEB-INF/web.xml">
+			<fileset dir="${web.root}">
+			</fileset>
+			<lib file="${target.common.jar}" />
+			<classes dir="${target.classes.server}" />
+		</war>
+	</target>
+
+	<!-- ================================= 
+          target: buildServer              
+         ================================= -->
+	<target name="buildServer" depends="buildCommon,generServerWar" description="buildServer">
+
+	</target>
+
+	<!-- ================================= 
+          target: buildServer Alone , but common.jar should have been generated.             
+         ================================= -->
+	<target name="buildServerAlone" depends="generServerWar" description="buildServerAlone">
+
+	</target>
+
+	<!--6 deploy war 
+    <target name="deployWar" depends="generServerWar" description="deploy war">  
+        <echo message="deploy war"/>  
+        <copy file="${target.dir}/${ant.project.name}-${version}.war" todir="${release}">
+        </copy>  
+    </target>  
+    -->
+
+</project>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="FileCheckerAgent" default="buildAgent" basedir="../">
+
+	<import file="buildCommon.xml" />
+	<property name="target.agent.jar" value="${target}/filechecker-agent.jar" />
+
+	<!--1 delete Agent target folder-->
+	<target name="cleanAgent" description="delete directory">
+		<echo message="clean Agent target directory" />
+		<delete dir="${target.classes.agent}" />
+	</target>
+
+	<!--2 create agent target directory -->
+	<target name="initAgent" description="create target directory" depends="cleanAgent">
+		<echo message="create Agent target directory" />
+		<mkdir dir="${target}" />
+		<mkdir dir="${target.classes}" />
+		<mkdir dir="${target.classes.agent}" />
+	</target>
+
+	<!--3 compile Agent source files -->
+	<target name="compileAgent" description="compile source files" depends="initAgent">
+		<echo message="compile Agent source files" />
+		<javac srcdir="${src.agent}" destdir="${target.classes.agent}">
+			<classpath refid="classpath" />
+			<classpath path="${target.common.jar}" />
+		</javac>
+	</target>
+
+	<!--4 copy Agent resources to classes path -->
+	<target name="copyResAgent" depends="compileAgent" description="copy resources to classes path">
+		<echo message="copy Agent resources to classes path" />
+		<copy todir="${target.classes.agent}">
+			<fileset dir="${config}/agent" />
+		</copy>
+	</target>
+
+	<!--5 generate Agent Jar -->
+	<target name="generAgentJar" depends="copyResAgent">
+		<echo message="generate Agent jar" />
+		<jar destfile="${target.agent.jar}" basedir="${target.classes.agent}">
+			<include name="**/*" />
+			<manifest>
+				<attribute name="version" value="FileChecker Agent JAR - V${version}" />
+			</manifest>
+		</jar>
+	</target>
+
+	<!-- ================================= 
+          target: build Agent              
+         ================================= -->
+	<target name="buildAgent" depends="buildCommon,generAgentJar" description="buildAgent">
+
+	</target>
+
+	<!-- ================================= 
+          target: build Agent Alone              
+         ================================= -->
+	<target name="buildAgentAlone" depends="generAgentJar" description="buildAgentAlone">
+
+	</target>
+	<!--6 deploy war 
+    <target name="deployWar" depends="generAgentWar" description="deploy war">  
+        <echo message="deploy war"/>  
+        <copy file="${target.dir}/${ant.project.name}-${version}.war" todir="${release}">
+        </copy>  
+    </target>  
+    -->
+
+</project>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="../" default="all" name="fileChecker">
+	<import file="buildCommon.xml"/>
+	<import file="buildServer.xml"/>
+	<import file="buildAgent.xml"/>
+ <!--  ===========================================================================   -->
+ <!--  TARGET [ALL]   -->
+ <!--  ===========================================================================   -->
+  <target depends="buildCommon,buildServerAlone,buildAgentAlone" name="all">
+  </target>
+
+</project>
