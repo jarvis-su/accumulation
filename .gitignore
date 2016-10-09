@@ -35,3 +35,6 @@
 /Guestbook/war/WEB-INF/classes
 /Guestbook/.settings
 /wordcounter/bin
+/FileChecker/.settings
+/test/bin/*.class
+/autotest/src/test/cn/com/my/test/*.class
